@@ -365,6 +365,96 @@
       border-top: 1px solid var(--border);
     }
 
+    .gallery-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .gallery-item:hover {
+      border-color: var(--border-hi);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.2s;
+    }
+
+    .gallery-item:hover img {
+      opacity: 0.8;
+    }
+
+    .gallery-item figcaption {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      font-family: var(--font-sans);
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 2rem;
+      cursor: pointer;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 80vh;
+      object-fit: contain;
+      border: 1px solid var(--border-hi);
+      border-radius: var(--radius);
+      cursor: default;
+    }
+
+    .lightbox-caption {
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-family: var(--font-sans);
+      letter-spacing: 0.5px;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      background: none;
+      border: 1px solid var(--border-hi);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-family: var(--font-mono);
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .lightbox-close:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
     /* ── Footer ── */
     .site-footer {
       border-top: 1px solid var(--border);
@@ -600,7 +690,7 @@
     </section>
 
     <!-- Gallery -->
-    <section class="section" id="gallery">
+<section class="section" id="gallery">
   <div class="section-header">
     <h2 class="section-title">Gallery</h2>
     <span class="section-desc">tool output screenshots and reference captures</span>
@@ -609,19 +699,27 @@
   <div class="prompt">ls assets/images/screenshots/</div>
 
   <div class="gallery-grid">
-    <figure class="gallery-item">
+    <figure class="gallery-item" onclick="openLightbox('assets/images/rezz_ss.png', 'rezz scan output')">
       <img src="assets/images/rezz_ss.png" alt="rezz scan output" />
       <figcaption>rezz scan output</figcaption>
     </figure>
-    <figure class="gallery-item">
+    <figure class="gallery-item" onclick="openLightbox('assets/images/v0x_ss.png', 'v0x recon run')">
       <img src="assets/images/v0x_ss.png" alt="v0x recon run" />
       <figcaption>v0x recon run</figcaption>
     </figure>
-    <figure class="gallery-item">
+    <figure class="gallery-item" onclick="openLightbox('assets/images/scion_ss_final.png', 'scion example output')">
       <img src="assets/images/scion_ss_final.png" alt="scion example output" />
       <figcaption>scion example output</figcaption>
     </figure>
   </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
 </section>
 
   </main>
@@ -640,6 +738,31 @@
       </div>
     </div>
   </footer>
+
+<script>
+  function openLightbox(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-img').alt = caption;
+    document.getElementById('lightbox-caption').textContent = caption;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // Prevent click on image itself from closing
+  document.getElementById('lightbox-img').addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
+</script>
 
 </body>
 </html>
