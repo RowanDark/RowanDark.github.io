@@ -636,58 +636,218 @@
     </section>
 
     <!-- Snippets -->
-    <section class="section" id="snippets">
-      <div class="section-header">
-        <h2 class="section-title">Snippets</h2>
-        <span class="section-desc">reference one-liners, tool invocations, and output captures</span>
+<section class="section" id="snippets">
+  <div class="section-header">
+    <h2 class="section-title">Snippets</h2>
+    <span class="section-desc">reference one-liners, tool invocations, and output captures</span>
+  </div>
+
+  <div class="prompt">cat snippets/index.txt</div>
+
+  <div class="snippets-grid">
+
+    <!-- SASA -->
+    <div class="snippet-card">
+      <div class="snippet-header">
+        <span class="snippet-title">sasa — stealth port scan</span>
+        <span class="snippet-lang">bash</span>
       </div>
+      <div class="snippet-body">
+<pre><span class="cmt"># fast scan, common ports</span>
+<span class="fn">sasa</span> <span class="str">$TARGET</span>
 
-      <div class="prompt">cat snippets/index.txt</div>
+<span class="cmt"># full port range</span>
+<span class="fn">sasa</span> --ports 1-65535 <span class="str">$TARGET</span>
 
-      <div class="snippets-grid">
-
-        <div class="snippet-card">
-          <div class="snippet-header">
-            <span class="snippet-title">quick-recon.sh</span>
-            <span class="snippet-lang">bash</span>
-          </div>
-          <div class="snippet-body">
-<pre><span class="cmt"># nmap fast service scan</span>
-<span class="fn">nmap</span> -sV -T4 --open \
-  -oA recon/nmap_svc \
-  <span class="str">$TARGET</span>
-
-<span class="cmt"># grab http headers</span>
-<span class="fn">curl</span> -sI <span class="str">$TARGET</span> \
-  | <span class="fn">grep</span> -Ei \
-  <span class="str">"server|x-powered"</span></pre>
-          </div>
-        </div>
-
-        <div class="snippet-card">
-          <div class="snippet-header">
-            <span class="snippet-title">subdomain-enum.sh</span>
-            <span class="snippet-lang">bash</span>
-          </div>
-          <div class="snippet-body">
-<pre><span class="cmt"># passive subdomain discovery</span>
-<span class="fn">subfinder</span> -d <span class="str">$DOMAIN</span> \
-  -o subs_passive.txt
-
-<span class="cmt"># probe live hosts</span>
-<span class="fn">httpx</span> -l subs_passive.txt \
-  -status-code -title \
-  -o live_hosts.txt</pre>
-          </div>
-        </div>
-
-        <div class="stub-notice">
-          [ more snippets coming ]
-          <span>drop .txt / .sh files into assets/snippets/ and add a snippet-card block here</span>
-        </div>
-
+<span class="cmt"># output to file</span>
+<span class="fn">sasa</span> --output results.txt \
+  <span class="str">$TARGET</span></pre>
       </div>
-    </section>
+    </div>
+
+    <!-- SCION basic -->
+    <div class="snippet-card">
+      <div class="snippet-header">
+        <span class="snippet-title">scion — subdomain enum</span>
+        <span class="snippet-lang">bash</span>
+      </div>
+      <div class="snippet-body">
+<pre><span class="cmt"># basic enumeration</span>
+<span class="fn">scion</span> example.com
+
+<span class="cmt"># subdomains only, pipe to httpx</span>
+<span class="fn">scion</span> --subs-only example.com \
+  | <span class="fn">httpx</span> -silent
+
+<span class="cmt"># dns-validate results</span>
+<span class="fn">scion</span> --verify \
+  --output json \
+  --out-file results.json \
+  example.com</pre>
+      </div>
+    </div>
+
+    <!-- SCION pipeline -->
+    <div class="snippet-card">
+      <div class="snippet-header">
+        <span class="snippet-title">scion — diff &amp; scope filter</span>
+        <span class="snippet-lang">bash</span>
+      </div>
+      <div class="snippet-body">
+<pre><span class="cmt"># save baseline run</span>
+<span class="fn">scion</span> --output text \
+  --out-file baseline.txt \
+  example.com
+
+<span class="cmt"># later: show only new assets</span>
+<span class="fn">scion</span> --compare baseline.txt \
+  example.com
+
+<span class="cmt"># filter to in-scope only</span>
+<span class="fn">scion</span> --scope-file scope.txt \
+  example.com</pre>
+      </div>
+    </div>
+
+    <!-- SCION nuclei chain -->
+    <div class="snippet-card">
+      <div class="snippet-header">
+        <span class="snippet-title">scion — nuclei chain</span>
+        <span class="snippet-lang">bash</span>
+      </div>
+      <div class="snippet-body">
+<pre><span class="cmt"># validate then scan exposures</span>
+<span class="fn">scion</span> --subs-only \
+  --verify example.com \
+  | <span class="fn">nuclei</span> -t exposures/
+
+<span class="cmt"># check available sources</span>
+<span class="fn">scion</span> --list-sources
+
+<span class="cmt"># specific sources only</span>
+<span class="fn">scion</span> \
+  --sources crtsh,securitytrails \
+  example.com</pre>
+      </div>
+    </div>
+
+    <!-- REZZ basic -->
+    <div class="snippet-card">
+      <div class="snippet-header">
+        <span class="snippet-title">rezz — secret scan</span>
+        <span class="snippet-lang">bash</span>
+      </div>
+      <div class="snippet-body">
+<pre><span class="cmt"># default scan (api-keys, creds, headers)</span>
+<span class="fn">rezz</span> --url https://example.com
+
+<span class="cmt"># all pattern kits, json output</span>
+<span class="fn">rezz</span> --url https://example.com \
+  --no-headless \
+  --patterns all \
+  --format json \
+  --output findings.json
+
+<span class="cmt"># summary after scan</span>
+<span class="fn">rezz</span> --url https://example.com \
+  --summary</pre>
+      </div>
+    </div>
+
+    <!-- REZZ auth -->
+    <div class="snippet-card">
+      <div class="snippet-header">
+        <span class="snippet-title">rezz — authenticated scan</span>
+        <span class="snippet-lang">bash</span>
+      </div>
+      <div class="snippet-body">
+<pre><span class="cmt"># form-based login</span>
+<span class="fn">rezz</span> \
+  --url https://example.com/dashboard \
+  --auth-form-url https://example.com/login \
+  --auth-form-user admin \
+  --auth-form-pass hunter2
+
+<span class="cmt"># cookie injection</span>
+<span class="fn">rezz</span> --url https://example.com \
+  --auth-cookie \
+  <span class="str">"session=abc123; csrf=xyz"</span></pre>
+      </div>
+    </div>
+
+    <!-- REZZ map -->
+    <div class="snippet-card">
+      <div class="snippet-header">
+        <span class="snippet-title">rezz map — endpoint mapper</span>
+        <span class="snippet-lang">bash</span>
+      </div>
+      <div class="snippet-body">
+<pre><span class="cmt"># map all reachable endpoints</span>
+<span class="fn">rezz</span> map \
+  --url https://example.com \
+  --format json \
+  --output endpoints.json
+
+<span class="cmt"># scope to specific hosts</span>
+<span class="fn">rezz</span> map \
+  --url https://example.com \
+  --scope example.com,api.example.com \
+  --verbose</pre>
+      </div>
+    </div>
+
+    <!-- V0X basic -->
+    <div class="snippet-card">
+      <div class="snippet-header">
+        <span class="snippet-title">v0x — wordlist gen</span>
+        <span class="snippet-lang">bash</span>
+      </div>
+      <div class="snippet-body">
+<pre><span class="cmt"># basic crawl to stdout (CeWL-compatible)</span>
+<span class="fn">v0x</span> --url https://example.com
+
+<span class="cmt"># depth 3, json output</span>
+<span class="fn">v0x</span> --url https://example.com \
+  --depth 3 \
+  --format json \
+  --output wordlist.json
+
+<span class="cmt"># static mode, markdown report</span>
+<span class="fn">v0x</span> --url https://example.com \
+  --no-headless \
+  --format md \
+  --output report.md</pre>
+      </div>
+    </div>
+
+    <!-- V0X auth -->
+    <div class="snippet-card">
+      <div class="snippet-header">
+        <span class="snippet-title">v0x — authenticated crawl</span>
+        <span class="snippet-lang">bash</span>
+      </div>
+      <div class="snippet-body">
+<pre><span class="cmt"># form login with verify selector</span>
+<span class="fn">v0x</span> \
+  --url https://example.com/dashboard \
+  --auth-form-url https://example.com/login \
+  --auth-form-user admin \
+  --auth-form-pass hunter2 \
+  --auth-verify-selector <span class="str">"#account-menu"</span>
+
+<span class="cmt"># bearer token</span>
+<span class="fn">v0x</span> --url https://api.example.com \
+  --auth-bearer <span class="str">$TOKEN</span></pre>
+      </div>
+    </div>
+
+    <div class="stub-notice">
+      [ more snippets coming ]
+      <span>drop .txt / .sh files into assets/snippets/ and add a snippet-card block here</span>
+    </div>
+
+  </div>
+</section>
 
     <!-- Gallery -->
 <section class="section" id="gallery">
