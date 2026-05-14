@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rosec Cyber LLC — security tools, code snippets, and project assets by r0sec / RowanDark." />
+  <title>Rosec Cyber | r0sec</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="site-wrapper">
+      <div class="header-inner">
+        <div class="logo-wrap">
+          <img
+            src="assets/images/logo_final.jpg"
+            alt="Rosec Cyber logo"
+            onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';"
+          />
+          <div class="logo-fallback" id="logo-fallback" style="display:none;">RC</div>
+        </div>
+        <div class="brand-block">
+          <div class="brand-name">Rosec<span>Cyber</span></div>
+          <div class="brand-sub">LLC &mdash; offensive security tooling &amp; research</div>
+          <div class="brand-handle">operator: <span>r0sec</span> / <span>RowanDark</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Nav ────────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Site sections">
+    <div class="site-wrapper">
+      <ul>
+        <li><a href="#tools">tools</a></li>
+        <li><a href="#snippets">snippets</a></li>
+        <li><a href="#gallery">gallery</a></li>
+        <li><a href="https://github.com/RowanDark" target="_blank" rel="noopener">github</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="site-wrapper">
+
+    <!-- ── Tools ──────────────────────────────────────────── -->
+    <section class="section" id="tools">
+      <div class="section-header">
+        <h2 class="section-title">Tools</h2>
+        <span class="section-desc">offensive &amp; recon tooling under active development</span>
+      </div>
+
+      <div class="prompt">ls -la ~/tools/</div>
+
+      <div class="tools-grid">
+
+        <article class="tool-card">
+          <div class="tool-header">
+            <span class="tool-name">SASA</span>
+            <span class="tool-tag active">active</span>
+          </div>
+          <p class="tool-desc">
+            Static Analysis &amp; Security Auditor — source-level code review
+            assistant for identifying common vulnerability patterns across
+            multiple languages.
+          </p>
+          <div class="tool-meta">
+            <span class="tool-lang">Python</span>
+            <span class="tool-lang">CLI</span>
+          </div>
+          <a class="tool-link" href="https://github.com/RowanDark/SASA" target="_blank" rel="noopener">
+            github.com/RowanDark/SASA
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-header">
+            <span class="tool-name">nitr0g3n</span>
+            <span class="tool-tag wip">wip</span>
+          </div>
+          <p class="tool-desc">
+            Modular payload generation framework — builds custom shellcode
+            stubs, obfuscated loaders, and format-agnostic output for
+            controlled lab environments.
+          </p>
+          <div class="tool-meta">
+            <span class="tool-lang">Python</span>
+            <span class="tool-lang">ASM</span>
+          </div>
+          <a class="tool-link" href="https://github.com/RowanDark/nitr0g3n" target="_blank" rel="noopener">
+            github.com/RowanDark/nitr0g3n
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-header">
+            <span class="tool-name">0xGen</span>
+            <span class="tool-tag wip">wip</span>
+          </div>
+          <p class="tool-desc">
+            Hex / byte-pattern generator for fuzzing, PoC development, and
+            format-string research. Outputs raw bytes, escaped literals, or
+            C-style arrays on demand.
+          </p>
+          <div class="tool-meta">
+            <span class="tool-lang">Python</span>
+            <span class="tool-lang">CLI</span>
+          </div>
+          <a class="tool-link" href="https://github.com/RowanDark/0xGen" target="_blank" rel="noopener">
+            github.com/RowanDark/0xGen
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-header">
+            <span class="tool-name">rezz</span>
+            <span class="tool-tag active">active</span>
+          </div>
+          <p class="tool-desc">
+            Reconnaissance and enumeration wrapper that chains together
+            passive and active discovery phases, normalises output, and
+            feeds structured results into downstream tooling.
+          </p>
+          <div class="tool-meta">
+            <span class="tool-lang">Python</span>
+            <span class="tool-lang">recon</span>
+          </div>
+          <a class="tool-link" href="https://github.com/RowanDark/rezz" target="_blank" rel="noopener">
+            github.com/RowanDark/rezz
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-header">
+            <span class="tool-name">v0x</span>
+            <span class="tool-tag active">active</span>
+          </div>
+          <p class="tool-desc">
+            Vulnerability oracle assistant — cross-references CVE data,
+            public PoC availability, and patch status for a given target
+            surface to prioritise exploitation paths.
+          </p>
+          <div class="tool-meta">
+            <span class="tool-lang">Python</span>
+            <span class="tool-lang">OSINT</span>
+          </div>
+          <a class="tool-link" href="https://github.com/RowanDark/v0x" target="_blank" rel="noopener">
+            github.com/RowanDark/v0x
+          </a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-header">
+            <span class="tool-name">scion</span>
+            <span class="tool-tag wip">wip</span>
+          </div>
+          <p class="tool-desc">
+            Successor framework for chaining recon, exploitation, and
+            post-exploitation modules in an operator-defined pipeline.
+            Designed for controlled lab and CTF use.
+          </p>
+          <div class="tool-meta">
+            <span class="tool-lang">Python</span>
+            <span class="tool-lang">framework</span>
+          </div>
+          <a class="tool-link" href="https://github.com/RowanDark/scion" target="_blank" rel="noopener">
+            github.com/RowanDark/scion
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── Snippets ────────────────────────────────────────── -->
+    <section class="section" id="snippets">
+      <div class="section-header">
+        <h2 class="section-title">Snippets</h2>
+        <span class="section-desc">reference code, one-liners, and tool output embeds</span>
+      </div>
+
+      <div class="prompt">cat snippets/index.txt</div>
+
+      <div class="snippets-grid">
+
+        <div class="snippet-card">
+          <div class="snippet-header">
+            <span class="snippet-title">quick-recon.sh</span>
+            <span class="snippet-lang">bash</span>
+          </div>
+          <div class="snippet-body">
+<pre><span class="cmt"># nmap fast service scan</span>
+<span class="fn">nmap</span> -sV -T4 --open \
+  -oA recon/nmap_svc \
+  <span class="str">$TARGET</span>
+
+<span class="cmt"># grab http headers</span>
+<span class="fn">curl</span> -sI <span class="str">$TARGET</span> \
+  | <span class="fn">grep</span> -Ei \
+  <span class="str">"server|x-powered"</span></pre>
+          </div>
+        </div>
+
+        <div class="snippet-card">
+          <div class="snippet-header">
+            <span class="snippet-title">sasa-usage.txt</span>
+            <span class="snippet-lang">shell</span>
+          </div>
+          <div class="snippet-body">
+<pre><span class="cmt"># run SASA against a python project</span>
+<span class="fn">python</span> sasa.py \
+  --target ./src \
+  --lang python \
+  --out report.json
+
+<span class="cmt"># filter high-severity only</span>
+<span class="fn">jq</span> <span class="str">'.findings[]
+  | select(.severity=="HIGH")'</span> \
+  report.json</pre>
+          </div>
+        </div>
+
+        <div class="stub-notice">
+          [ more snippets coming ]
+          <span>drop .txt / .sh files into assets/snippets/ and embed here</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Gallery ────────────────────────────────────────── -->
+    <section class="section" id="gallery">
+      <div class="section-header">
+        <h2 class="section-title">Gallery</h2>
+        <span class="section-desc">tool output screenshots and reference captures</span>
+      </div>
+
+      <div class="prompt">ls assets/images/screenshots/</div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item">
+          <span class="placeholder-icon">[&nbsp;img&nbsp;]</span>
+          <span>SASA scan output</span>
+        </div>
+
+        <div class="gallery-item">
+          <span class="placeholder-icon">[&nbsp;img&nbsp;]</span>
+          <span>rezz recon run</span>
+        </div>
+
+        <div class="gallery-item">
+          <span class="placeholder-icon">[&nbsp;img&nbsp;]</span>
+          <span>v0x CVE report</span>
+        </div>
+
+        <div class="gallery-item">
+          <span class="placeholder-icon">[&nbsp;img&nbsp;]</span>
+          <span>placeholder</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="site-wrapper">
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a href="https://github.com/RowanDark" target="_blank" rel="noopener">github.com/RowanDark</a>
+          <a href="#tools">tools</a>
+          <a href="#snippets">snippets</a>
+          <a href="#gallery">gallery</a>
+        </div>
+        <div>Rosec Cyber LLC &mdash; r0sec / RowanDark<span class="cursor"></span></div>
+        <div>for authorized security research, CTF, and educational use only</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
