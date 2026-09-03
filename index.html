@@ -7,23 +7,22 @@
   <title>Rosec Cyber | r0sec</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/rosec.css">
   <style>
     :root {
-      --bg:         #0e0e0f;
-      --bg-card:    #141416;
-      --bg-panel:   #111113;
-      --border:     #232328;
-      --border-hi:  #3a3a42;
-      --accent:     #7ee8a2;
-      --accent2:    #5bc8e8;
-      --accent-dim: #2a5c3a;
-      --text:       #d4d4d8;
-      --text-muted: #c2e3d2;
-      --text-dim:   #64bf91;
-      --font-mono:  "IBM Plex Mono", "Courier New", monospace;
-      --font-sans:  "IBM Plex Sans", sans-serif;
-      --radius:     3px;
+      --bg:         var(--paper);
+      --bg-card:    var(--paper-alt);
+      --bg-panel:   var(--paper-alt);
+      --border:     var(--rule);
+      --border-hi:  var(--ink-soft);
+      --accent:     var(--red);
+      --accent2:    var(--steel);
+      --accent-dim: var(--red-deep);
+      --text:       var(--ink);
+      --text-muted: var(--ink-soft);
+      --text-dim:   var(--sev-info);
+      --radius:     2px;
       --gap:        1.5rem;
     }
 
@@ -33,9 +32,6 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: var(--font-mono);
-      font-size: 13px;
-      line-height: 1.65;
       min-height: 100vh;
     }
 
@@ -78,17 +74,18 @@
       font-weight: 600;
       color: var(--accent);
       background: var(--bg-card);
-      letter-spacing: 2px;
+      font-family: var(--font-display);
+      letter-spacing: -0.01em;
     }
 
     .brand-block { flex: 1; }
 
     .brand-name {
-      font-family: var(--font-mono);
+      font-family: var(--font-display);
       font-size: 1.6rem;
       font-weight: 600;
       color: var(--text);
-      letter-spacing: 0.5px;
+      letter-spacing: -0.01em;
       line-height: 1.1;
     }
 
@@ -97,16 +94,17 @@
     .brand-sub {
       color: var(--text-muted);
       font-size: 0.75rem;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.01em;
       margin-top: 0.35rem;
-      font-family: var(--font-sans);
-      font-weight: 300;
+      font-family: var(--font-display);
+      font-weight: 500;
     }
 
     .brand-handle {
       color: var(--text-dim);
       font-size: 0.72rem;
       margin-top: 0.6rem;
+      font-family: var(--font-display);
     }
 
     .brand-handle .hi { color: var(--text-muted); }
@@ -127,9 +125,9 @@
       display: inline-block;
       padding: 0.65rem 1rem;
       color: var(--text-muted);
-      font-size: 0.72rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      letter-spacing: 0;
       border-bottom: 2px solid transparent;
       transition: color 0.15s, border-color 0.15s;
     }
@@ -156,11 +154,8 @@
     }
 
     .section-title {
-      font-size: 0.7rem;
-      font-weight: 600;
+      font-size: 0.95rem;
       color: var(--accent);
-      letter-spacing: 2px;
-      text-transform: uppercase;
     }
 
     .section-desc {
@@ -170,6 +165,7 @@
     }
 
     .prompt {
+      font-family: var(--font-mono);
       font-size: 0.72rem;
       color: var(--text-dim);
       margin-bottom: 1.5rem;
@@ -209,33 +205,35 @@
     }
 
     .tool-name {
+      font-family: var(--font-display);
       font-size: 0.95rem;
       font-weight: 600;
       color: var(--text);
-      letter-spacing: 0.5px;
+      letter-spacing: -0.01em;
     }
 
     .tool-tag {
-      font-size: 0.62rem;
+      font-family: var(--font-display);
+      font-size: 0.68rem;
       padding: 0.15rem 0.5rem;
       border-radius: 2px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      letter-spacing: 0.02em;
       font-weight: 500;
     }
 
     .tool-tag.active {
-      background: rgba(126, 232, 162, 0.08);
+      background: rgba(200, 16, 46, 0.06);
       color: var(--accent);
       border: 1px solid var(--accent-dim);
     }
 
     .tool-desc {
       color: var(--text-muted);
-      font-size: 0.78rem;
-      font-family: var(--font-sans);
-      font-weight: 300;
+      font-size: 0.85rem;
+      font-family: var(--font-body);
+      font-weight: 400;
       line-height: 1.6;
+      max-width: 68ch;
       flex: 1;
     }
 
@@ -246,17 +244,19 @@
     }
 
     .tool-lang {
-      font-size: 0.65rem;
+      font-family: var(--font-display);
+      font-size: 0.68rem;
       color: var(--text-dim);
       padding: 0.1rem 0.45rem;
       background: var(--bg-panel);
       border: 1px solid var(--border);
       border-radius: 2px;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.01em;
     }
 
     .tool-link {
-      font-size: 0.72rem;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
       color: var(--text-dim);
       display: inline-flex;
       align-items: center;
@@ -293,7 +293,8 @@
       padding: 0.5rem 0.85rem;
       background: var(--bg-card);
       border-bottom: 1px solid var(--border);
-      font-size: 0.7rem;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
     }
 
     .snippet-title { color: var(--text-muted); }
@@ -313,7 +314,7 @@
     }
 
     .snippet-body pre .kw  { color: var(--accent2); }
-    .snippet-body pre .str { color: #e8c57e; }
+    .snippet-body pre .str { color: var(--sev-med); }
     .snippet-body pre .cmt { color: var(--text-dim); }
     .snippet-body pre .fn  { color: var(--accent); }
 
