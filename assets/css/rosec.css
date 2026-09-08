@@ -636,6 +636,19 @@ a:hover { color: var(--accent); text-decoration: underline; }
   color: var(--paper);
 }
 
+.btn-disabled {
+  background: var(--bg-panel);
+  color: var(--text-dim);
+  border: 1px dashed var(--border);
+  cursor: not-allowed;
+}
+
+.btn-disabled:hover {
+  background: var(--bg-panel);
+  color: var(--text-dim);
+  border-color: var(--border);
+}
+
 .cta-inner {
   display: flex;
   align-items: center;
