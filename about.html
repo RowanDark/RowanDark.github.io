@@ -10,23 +10,110 @@ permalink: /about/
         <span class="section-desc">Covington, Georgia</span>
       </div>
 
-      <p>
-        Rosec Cyber LLC is a Covington, Georgia security consultancy focused
-        on penetration testing and security assessment for small and
-        mid-sized businesses — organizations that need real offensive
-        security work without the overhead of a large firm.
-      </p>
+      {% assign headshot = nil %}
+      {% for f in site.static_files %}
+        {% if f.path == "/assets/images/headshot.jpg" %}{% assign headshot = f %}{% endif %}
+      {% endfor %}
+
+      <div class="bio">
+        {% if headshot %}
+        <img class="headshot" src="{{ '/assets/images/headshot.jpg' | relative_url }}" alt="Portrait of Rowan Dark" width="180" height="180" />
+        {% endif %}
+        <div class="bio-copy">
+          <p>
+            I'm the principal security consultant and owner of Rosec Cyber
+            LLC, a penetration testing and security assessment practice
+            based in Covington, Georgia. When you hire a small firm, you're
+            hiring a person, not a logo — this page is about the person
+            actually doing the testing.
+          </p>
+
+          <p>
+            Before moving into offensive security, I spent 15+ years in IT
+            operations, systems management, and logistics and operations
+            leadership. That background shapes how I test: I've been the
+            person on the other end of a vague finding with no reproduction
+            steps, so every report I deliver is written to be understood
+            and actioned by the team that has to fix it, not just the
+            person who reads it once. Alongside Rosec, I currently work as
+            an IT project lead and serve as a Microsoft Dynamics 365
+            security subject-matter expert, which keeps me close to how
+            real business systems are actually configured, permissioned,
+            and broken.
+          </p>
+        </div>
+      </div>
+
+      <div class="rule"></div>
+
+      <div class="section-header">
+        <h2 class="section-title">Certifications</h2>
+        <span class="section-desc">credentials currently held</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Credential</th>
+            <th>Issuing body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GCIH — GIAC Certified Incident Handler</td>
+            <td>GIAC</td>
+          </tr>
+          <tr>
+            <td>GSEC — GIAC Security Essentials</td>
+            <td>GIAC</td>
+          </tr>
+          <tr>
+            <td>GFACT — GIAC Foundational Cybersecurity Technologies</td>
+            <td>GIAC</td>
+          </tr>
+          <tr>
+            <td>CC — Certified in Cybersecurity</td>
+            <td>ISC2</td>
+          </tr>
+          <tr>
+            <td>SANS Cyber Academy Scholarship Recipient</td>
+            <td>SANS Institute</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="rule"></div>
+
+      <div class="section-header">
+        <h2 class="section-title">Ongoing research</h2>
+        <span class="section-desc">staying sharp between engagements</span>
+      </div>
 
       <p>
-        The tooling used during engagements is built and maintained
-        in-house — see <a href="{{ '/tools/' | relative_url }}">Tools</a> for
-        the open-source projects behind the recon and testing work, or
-        <a href="{{ '/work/' | relative_url }}">Work</a> for output samples.
+        I stay active in vulnerability research and bug bounty work on
+        <a href="https://hackerone.com" target="_blank" rel="noopener">HackerOne</a>,
+        <a href="https://bugcrowd.com" target="_blank" rel="noopener">BugCrowd</a>,
+        and <a href="https://www.intigriti.com" target="_blank" rel="noopener">Intigriti</a>,
+        alongside CTF participation and open-source tool development — see
+        <a href="{{ '/tools/' | relative_url }}">Tools</a> for what's come out
+        of that work. It's how I keep pace with how attackers actually
+        operate, rather than relying on what a checklist covered last year.
       </p>
 
+      <div class="rule"></div>
+
+      <div class="section-header">
+        <h2 class="section-title">Gray Box</h2>
+        <span class="section-desc">threat intel for small business audiences</span>
+      </div>
+
       <p>
-        Notes on tooling, findings, and the security research behind it are
-        published on the
+        Gray Box is a cybersecurity podcast and
+        <a href="https://graybox.substack.com" target="_blank" rel="noopener">Substack</a>
+        I write and record, aimed at translating threat intelligence into
+        something a small business owner can actually use — without the
+        jargon or the assumption that you have a security team. New
+        episodes and writeups are published on the
         <a href="https://graybox.substack.com" target="_blank" rel="noopener">Gray Box Substack</a>.
       </p>
 
