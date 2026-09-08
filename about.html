@@ -5,7 +5,9 @@ description: "Meet Rowan Dark, principal security consultant and owner of Rosec 
 permalink: /about/
 ---
 
-    <section class="section" id="about">
+    <div class="band band--ink-900">
+    <div class="band-inner">
+    <section class="section section--lead" id="about">
       <div class="section-header">
         <h1 class="section-title">About</h1>
         <span class="section-desc">Covington, Georgia</span>
@@ -26,67 +28,47 @@ permalink: /about/
             LLC, a penetration testing and security assessment practice
             based in Covington, Georgia. When you hire a small firm, you're
             hiring a person, not a logo — this page is about the person
-            actually doing the testing.
+            actually doing the testing, not a composite bio written by a
+            marketing team.
           </p>
 
           <p>
             Before moving into offensive security, I spent 15+ years in IT
             operations, systems management, and logistics and operations
-            leadership. That background shapes how I test: I've been the
-            person on the other end of a vague finding with no reproduction
-            steps, so every report I deliver is written to be understood
-            and actioned by the team that has to fix it, not just the
-            person who reads it once. Alongside Rosec, I currently work as
-            an IT project lead and serve as a Microsoft Dynamics 365
-            security subject-matter expert, which keeps me close to how
-            real business systems are actually configured, permissioned,
-            and broken.
+            leadership. That's not a footnote — it's most of what separates
+            this practice from a pure-technical competitor. Most testers
+            have written exploits against systems they've never had to run.
+            I've been the person paged at 2 a.m. because a change window
+            went wrong, the person who had to explain an outage to
+            operations leadership, and the person who had to keep a
+            warehouse or a help desk functioning while IT changed
+            underneath it. That's what a finding actually threatens, and
+            it's why I score and write findings the way I do: in terms of
+            what breaks for the business, not just what a scanner flags.
+          </p>
+
+          <p>
+            I've also been the person on the other end of a vague finding
+            with no reproduction steps, so every report I deliver is
+            written to be understood and actioned by the team that has to
+            fix it, not just the person who reads it once. Alongside Rosec,
+            I currently work as an IT project lead and serve as a Microsoft
+            Dynamics 365 security subject-matter expert — ongoing,
+            hands-on exposure to how a real enterprise environment gets
+            configured, permissioned, patched, and occasionally broken,
+            rather than something I only see from the outside during an
+            engagement.
           </p>
         </div>
       </div>
+    </section>
+    </div>
+    </div>
 
-      <div class="rule"></div>
-
-      <div class="section-header">
-        <h2 class="section-title">Certifications</h2>
-        <span class="section-desc">credentials currently held</span>
-      </div>
-
-      <div class="table-scroll">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Credential</th>
-            <th>Issuing body</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>GCIH — GIAC Certified Incident Handler</td>
-            <td>GIAC</td>
-          </tr>
-          <tr>
-            <td>GSEC — GIAC Security Essentials</td>
-            <td>GIAC</td>
-          </tr>
-          <tr>
-            <td>GFACT — GIAC Foundational Cybersecurity Technologies</td>
-            <td>GIAC</td>
-          </tr>
-          <tr>
-            <td>CC — Certified in Cybersecurity</td>
-            <td>ISC2</td>
-          </tr>
-          <tr>
-            <td>SANS Cyber Academy Scholarship Recipient</td>
-            <td>SANS Institute</td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-
-      <div class="rule"></div>
-
+    <div class="band band--ink-800">
+    <div class="band-inner doc-grid">
+    <div class="doc-main">
+    <section class="section" id="research">
       <div class="section-header">
         <h2 class="section-title">Ongoing research</h2>
         <span class="section-desc">staying sharp between engagements</span>
@@ -102,9 +84,58 @@ permalink: /about/
         of that work. It's how I keep pace with how attackers actually
         operate, rather than relying on what a checklist covered last year.
       </p>
+      <p>
+        None of that research is described here beyond what's already
+        publicly disclosed — see <a href="{{ '/work/' | relative_url }}">Work</a>
+        for the policy on that — but the tooling it produces is public. The
+        recon and secret-scanning tools linked from this site started as
+        things I needed on a bug bounty target or a client engagement and
+        kept using because nothing off the shelf fit the workflow.
+      </p>
+    </section>
+    </div>
+    <aside class="doc-aside">
+      <div class="margin-card">
+        <h3 class="margin-card-title">Certifications</h3>
+        <ul class="credential-list">
+          <li class="credential-item">GIAC GCIH</li>
+          <li class="credential-item">GIAC GSEC</li>
+          <li class="credential-item">GIAC GFACT</li>
+          <li class="credential-item">ISC2 CC</li>
+          <li class="credential-item">SANS Cyber Academy</li>
+        </ul>
+      </div>
+    </aside>
+    </div>
+    </div>
 
-      <div class="rule"></div>
+    <div class="band band--ink-900">
+    <div class="band-inner">
+    <section class="section" id="how-i-work">
+      <div class="section-header">
+        <h2 class="section-title">How I work</h2>
+        <span class="section-desc">what shapes the way an engagement runs</span>
+      </div>
+      <p>
+        These aren't marketing language — they're the specific habits that
+        come out of having been on the receiving end of a bad vendor
+        relationship, and having had to explain a security finding to
+        people whose job isn't security.
+      </p>
+      <ul>
+        <li><strong>Scoping honesty.</strong> If your environment doesn't need a two-week engagement, that's what I'll say on the scoping call — not scale the plan to fit a template.</li>
+        <li><strong>Severity discipline.</strong> A finding is scored on what it actually does to your environment, not on how alarming it looks in a scanner's default output. A low stays a low.</li>
+        <li><strong>Reporting for the room, not just the ticket.</strong> Every report carries an executive summary written for whoever has to explain risk to an owner or a board, alongside the reproduction steps the engineering team needs.</li>
+        <li><strong>Direct line.</strong> You reach me directly — no account manager and no ticket queue between you and the person who did the testing.</li>
+      </ul>
+    </section>
+    </div>
+    </div>
 
+    <div class="band band--ink-800">
+    <div class="band-inner doc-grid">
+    <div class="doc-main">
+    <section class="section" id="gray-box">
       <div class="section-header">
         <h2 class="section-title">Gray Box</h2>
         <span class="section-desc">threat intel for small business audiences</span>
@@ -115,8 +146,12 @@ permalink: /about/
         <a href="https://graybox.substack.com" target="_blank" rel="noopener">Substack</a>
         I write and record, aimed at translating threat intelligence into
         something a small business owner can actually use — without the
-        jargon or the assumption that you have a security team. New
-        episodes and writeups are published on the
+        jargon or the assumption that you have a security team. Episodes
+        cover the same territory this site does: what a real attacker
+        actually goes after in a small business environment, what a
+        finding on a report means in plain terms, and what's worth fixing
+        first when the budget doesn't stretch to everything. New episodes
+        and writeups are published on the
         <a href="https://graybox.substack.com" target="_blank" rel="noopener">Gray Box Substack</a>.
       </p>
 
@@ -125,3 +160,16 @@ permalink: /about/
         discuss an engagement.
       </p>
     </section>
+    </div>
+    <aside class="doc-aside">
+      <div class="margin-card">
+        <h3 class="margin-card-title">Elsewhere</h3>
+        <ul class="margin-card-list">
+          <li><a href="https://graybox.substack.com" target="_blank" rel="noopener">Gray Box podcast</a></li>
+          <li><a href="https://graybox.substack.com" target="_blank" rel="noopener">Gray Box Substack</a></li>
+          <li><a href="https://github.com/RowanDark" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </aside>
+    </div>
+    </div>

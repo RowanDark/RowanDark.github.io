@@ -5,7 +5,9 @@ description: "The eight-phase testing process behind every Rosec Cyber engagemen
 permalink: /methodology/
 ---
 
-    <section class="section" id="methodology">
+    <div class="band band--ink-900">
+    <div class="band-inner">
+    <section class="section section--lead" id="methodology">
       <div class="section-header">
         <h1 class="section-title">Methodology</h1>
         <span class="section-desc">eight phases, start to finish</span>
@@ -17,11 +19,18 @@ permalink: /methodology/
         methodology document, with per-phase checklists and procedures, is
         delivered as an engagement artifact, not published here.
       </p>
+    </section>
+    </div>
+    </div>
 
+    <div class="band band--ink-800">
+    <div class="band-inner doc-grid">
+    <div class="doc-main">
+    <section class="section" id="phases">
       <h2>The eight phases</h2>
 
       <ol class="steps">
-        <li class="step-item">
+        <li class="step-item" id="phase-01">
           <span class="step-marker">01</span>
           <div>
             <h3>Pre-engagement and authorization</h3>
@@ -33,7 +42,7 @@ permalink: /methodology/
             </p>
           </div>
         </li>
-        <li class="step-item">
+        <li class="step-item" id="phase-02">
           <span class="step-marker">02</span>
           <div>
             <h3>Passive reconnaissance</h3>
@@ -45,7 +54,7 @@ permalink: /methodology/
             </p>
           </div>
         </li>
-        <li class="step-item">
+        <li class="step-item" id="phase-03">
           <span class="step-marker">03</span>
           <div>
             <h3>Active reconnaissance</h3>
@@ -57,7 +66,7 @@ permalink: /methodology/
             </p>
           </div>
         </li>
-        <li class="step-item">
+        <li class="step-item" id="phase-04">
           <span class="step-marker">04</span>
           <div>
             <h3>Enumeration</h3>
@@ -69,7 +78,7 @@ permalink: /methodology/
             </p>
           </div>
         </li>
-        <li class="step-item">
+        <li class="step-item" id="phase-05">
           <span class="step-marker">05</span>
           <div>
             <h3>Vulnerability analysis</h3>
@@ -81,7 +90,7 @@ permalink: /methodology/
             </p>
           </div>
         </li>
-        <li class="step-item">
+        <li class="step-item" id="phase-06">
           <span class="step-marker">06</span>
           <div>
             <h3>Exploitation</h3>
@@ -93,7 +102,7 @@ permalink: /methodology/
             </p>
           </div>
         </li>
-        <li class="step-item">
+        <li class="step-item" id="phase-07">
           <span class="step-marker">07</span>
           <div>
             <h3>Post-exploitation</h3>
@@ -105,7 +114,7 @@ permalink: /methodology/
             </p>
           </div>
         </li>
-        <li class="step-item">
+        <li class="step-item" id="phase-08">
           <span class="step-marker">08</span>
           <div>
             <h3>Reporting</h3>
@@ -118,9 +127,30 @@ permalink: /methodology/
           </div>
         </li>
       </ol>
+    </section>
+    </div>
+    <aside class="doc-aside">
+      <nav class="margin-card margin-card--sticky phase-nav" aria-label="Jump to a phase">
+        <h3 class="margin-card-title">Jump to a phase</h3>
+        <ol class="phase-nav-list">
+          <li><a href="#phase-01">01 Pre-engagement</a></li>
+          <li><a href="#phase-02">02 Passive recon</a></li>
+          <li><a href="#phase-03">03 Active recon</a></li>
+          <li><a href="#phase-04">04 Enumeration</a></li>
+          <li><a href="#phase-05">05 Vulnerability analysis</a></li>
+          <li><a href="#phase-06">06 Exploitation</a></li>
+          <li><a href="#phase-07">07 Post-exploitation</a></li>
+          <li><a href="#phase-08">08 Reporting</a></li>
+        </ol>
+      </nav>
+    </aside>
+    </div>
+    </div>
 
-      <div class="rule"></div>
-
+    <div class="band band--ink-900">
+    <div class="band-inner doc-grid">
+    <div class="doc-main">
+    <section class="section" id="standards">
       <div class="section-header">
         <h2 class="section-title">Standards alignment</h2>
         <span class="section-desc">what each contributes</span>
@@ -145,8 +175,6 @@ permalink: /methodology/
         </div>
       </dl>
 
-      <div class="rule"></div>
-
       <h2>Scoring discipline</h2>
       <p>
         Findings are scored on demonstrated, verified impact against your
@@ -155,15 +183,26 @@ permalink: /methodology/
         does not inflate severity to make a report look more valuable; a
         low finding is reported as a low finding.
       </p>
+    </section>
+    </div>
+    <aside class="doc-aside">
+      <div class="margin-card">
+        <h3 class="margin-card-title">Severity scale</h3>
+        <ul class="severity-legend">
+          <li><span class="legend-swatch legend-swatch--info"></span>Info</li>
+          <li><span class="legend-swatch legend-swatch--low"></span>Low</li>
+          <li><span class="legend-swatch legend-swatch--medium"></span>Medium</li>
+          <li><span class="legend-swatch legend-swatch--high"></span>High</li>
+          <li><span class="legend-swatch legend-swatch--critical"></span>Critical</li>
+        </ul>
+      </div>
+    </aside>
+    </div>
+    </div>
 
-      <ul class="severity-legend">
-        <li><span class="legend-swatch legend-swatch--info"></span>Info</li>
-        <li><span class="legend-swatch legend-swatch--low"></span>Low</li>
-        <li><span class="legend-swatch legend-swatch--medium"></span>Medium</li>
-        <li><span class="legend-swatch legend-swatch--high"></span>High</li>
-        <li><span class="legend-swatch legend-swatch--critical"></span>Critical</li>
-      </ul>
-
+    <div class="band band--ink-800">
+    <div class="band-inner">
+    <section class="section" id="safety">
       <h2>Safety</h2>
       <div class="callout">
         <p>
@@ -193,3 +232,32 @@ permalink: /methodology/
         <a href="{{ '/tools/' | relative_url }}">Tools</a>.
       </p>
     </section>
+    </div>
+    </div>
+
+    <script>
+      (function () {
+        var links = document.querySelectorAll('.phase-nav-list a');
+        if (!links.length || !('IntersectionObserver' in window)) return;
+
+        var linkByTargetId = {};
+        links.forEach(function (link) {
+          var id = link.getAttribute('href').slice(1);
+          if (document.getElementById(id)) linkByTargetId[id] = link;
+        });
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var active = linkByTargetId[entry.target.id];
+            if (!active) return;
+            links.forEach(function (l) { l.removeAttribute('aria-current'); });
+            active.setAttribute('aria-current', 'true');
+          });
+        }, { rootMargin: '-15% 0px -70% 0px' });
+
+        Object.keys(linkByTargetId).forEach(function (id) {
+          observer.observe(document.getElementById(id));
+        });
+      })();
+    </script>
