@@ -1,20 +1,53 @@
+/* ─────────────────────────────────────────────────────────
+   Rosec Cyber — design tokens
+   Report vernacular: flat, ruled, no gradients, no drop
+   shadows, no border-radius above 2px.
+   ───────────────────────────────────────────────────────── */
+
 :root {
-  --bg:         #0e0e0f;
-  --bg-card:    #141416;
-  --bg-panel:   #111113;
-  --border:     #232328;
-  --border-hi:  #3a3a42;
-  --accent:     #7ee8a2;
-  --accent2:    #5bc8e8;
-  --accent-dim: #2a5c3a;
-  --text:       #d4d4d8;
-  --text-muted: #c2e3d2;
-  --text-dim:   #64bf91;
-  --font-mono:  "IBM Plex Mono", "Courier New", monospace;
-  --font-sans:  "IBM Plex Sans", sans-serif;
-  --radius:     3px;
+  /* surfaces */
+  --paper:      #FBFBF9;
+  --paper-alt:  #EFEFEC;
+  --ink:        #14161A;
+  --ink-soft:   #3D424B;
+  --rule:       #D8D8D3;
+
+  /* brand */
+  --red:        #C8102E;
+  --red-deep:   #8A0B1F;
+  --steel:      #37506B;
+
+  /* severity — used as an information device, not accent decoration */
+  --sev-crit:   #8A0B1F;
+  --sev-high:   #C8102E;
+  --sev-med:    #B36B00;
+  --sev-low:    #4A6FA5;
+  --sev-info:   #6B7280;
+
+  /* type */
+  --font-display: "Archivo", system-ui, sans-serif;
+  --font-body:    "Source Serif 4", Georgia, serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  /* legacy component aliases, remapped onto the tokens above */
+  --bg:         var(--paper);
+  --bg-card:    var(--paper-alt);
+  --bg-panel:   var(--paper-alt);
+  --border:     var(--rule);
+  --border-hi:  var(--ink-soft);
+  --accent:     var(--red);
+  --accent2:    var(--steel);
+  --accent-dim: var(--red-deep);
+  --text:       var(--ink);
+  --text-muted: var(--ink-soft);
+  --text-dim:   var(--sev-info);
+  --radius:     2px;
   --gap:        1.5rem;
 }
+
+/* ─────────────────────────────────────────────────────────
+   Base type scale
+   ───────────────────────────────────────────────────────── */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -22,10 +55,38 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-mono);
-  font-size: 13px;
+  font-family: var(--font-body);
+  font-size: 17px;
   line-height: 1.65;
   min-height: 100vh;
+}
+
+p, li, dd, blockquote {
+  max-width: 68ch;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+/* Section labels, nav, and other short UI labels use the display
+   face, set in normal case — never all-caps, never mono. */
+.label,
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* --font-mono is reserved for actual code, shell commands, and
+   finding IDs — never for headers, nav, or small labels. */
+code, pre, kbd, samp, .finding-id {
+  font-family: var(--font-mono);
 }
 
 a { color: var(--accent2); text-decoration: none; }
@@ -67,17 +128,18 @@ a:hover { color: var(--accent); text-decoration: underline; }
   font-weight: 600;
   color: var(--accent);
   background: var(--bg-card);
-  letter-spacing: 2px;
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
 }
 
 .brand-block { flex: 1; }
 
 .brand-name {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--text);
-  letter-spacing: 0.5px;
+  letter-spacing: -0.01em;
   line-height: 1.1;
 }
 
@@ -86,16 +148,17 @@ a:hover { color: var(--accent); text-decoration: underline; }
 .brand-sub {
   color: var(--text-muted);
   font-size: 0.75rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.01em;
   margin-top: 0.35rem;
-  font-family: var(--font-sans);
-  font-weight: 300;
+  font-family: var(--font-display);
+  font-weight: 500;
 }
 
 .brand-handle {
   color: var(--text-dim);
   font-size: 0.72rem;
   margin-top: 0.6rem;
+  font-family: var(--font-display);
 }
 
 .brand-handle .hi { color: var(--text-muted); }
@@ -116,9 +179,9 @@ a:hover { color: var(--accent); text-decoration: underline; }
   display: inline-block;
   padding: 0.65rem 1rem;
   color: var(--text-muted);
-  font-size: 0.72rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0;
   border-bottom: 2px solid transparent;
   transition: color 0.15s, border-color 0.15s;
 }
@@ -145,20 +208,18 @@ a:hover { color: var(--accent); text-decoration: underline; }
 }
 
 .section-title {
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.95rem;
   color: var(--accent);
-  letter-spacing: 2px;
-  text-transform: uppercase;
 }
 
 .section-desc {
   color: var(--text-dim);
   font-size: 0.7rem;
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
 }
 
 .prompt {
+  font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text-dim);
   margin-bottom: 1.5rem;
@@ -198,33 +259,35 @@ a:hover { color: var(--accent); text-decoration: underline; }
 }
 
 .tool-name {
+  font-family: var(--font-display);
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text);
-  letter-spacing: 0.5px;
+  letter-spacing: -0.01em;
 }
 
 .tool-tag {
-  font-size: 0.62rem;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
   padding: 0.15rem 0.5rem;
   border-radius: 2px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   font-weight: 500;
 }
 
 .tool-tag.active {
-  background: rgba(126, 232, 162, 0.08);
+  background: rgba(200, 16, 46, 0.06);
   color: var(--accent);
   border: 1px solid var(--accent-dim);
 }
 
 .tool-desc {
   color: var(--text-muted);
-  font-size: 0.78rem;
-  font-family: var(--font-sans);
-  font-weight: 300;
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  font-weight: 400;
   line-height: 1.6;
+  max-width: 68ch;
   flex: 1;
 }
 
@@ -235,17 +298,19 @@ a:hover { color: var(--accent); text-decoration: underline; }
 }
 
 .tool-lang {
-  font-size: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
   color: var(--text-dim);
   padding: 0.1rem 0.45rem;
   background: var(--bg-panel);
   border: 1px solid var(--border);
   border-radius: 2px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.01em;
 }
 
 .tool-link {
-  font-size: 0.72rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
   color: var(--text-dim);
   display: inline-flex;
   align-items: center;
@@ -282,7 +347,8 @@ a:hover { color: var(--accent); text-decoration: underline; }
   padding: 0.5rem 0.85rem;
   background: var(--bg-card);
   border-bottom: 1px solid var(--border);
-  font-size: 0.7rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
 }
 
 .snippet-title { color: var(--text-muted); }
@@ -302,7 +368,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
 }
 
 .snippet-body pre .kw  { color: var(--accent2); }
-.snippet-body pre .str { color: #e8c57e; }
+.snippet-body pre .str { color: var(--sev-med); }
 .snippet-body pre .cmt { color: var(--text-dim); }
 .snippet-body pre .fn  { color: var(--accent); }
 
@@ -320,7 +386,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
   color: var(--text-dim);
   margin-top: 0.4rem;
   font-size: 0.68rem;
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
 }
 
 /* ── Gallery ── */
@@ -360,7 +426,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
   padding: 0.4rem 0.6rem;
   font-size: 0.68rem;
   color: var(--text-dim);
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   background: var(--bg-card);
   border-top: 1px solid var(--border);
 }
@@ -396,8 +462,8 @@ a:hover { color: var(--accent); text-decoration: underline; }
 .lightbox-caption {
   color: var(--text-muted);
   font-size: 0.72rem;
-  font-family: var(--font-sans);
-  letter-spacing: 0.5px;
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
 }
 
 .lightbox-close {
@@ -455,6 +521,134 @@ a:hover { color: var(--accent); text-decoration: underline; }
 @keyframes blink {
   0%, 100% { opacity: 0.7; }
   50%       { opacity: 0; }
+}
+
+/* ─────────────────────────────────────────────────────────
+   Components
+   ───────────────────────────────────────────────────────── */
+
+/* Severity chip — five variants, distinguishable in grayscale
+   by weight and border style/width, not hue alone. */
+.severity-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.15em 0.65em;
+  border-radius: 2px;
+  background: transparent;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  color: currentColor;
+}
+
+.severity-chip--critical {
+  color: var(--sev-crit);
+  font-weight: 700;
+  border: 3px double currentColor;
+}
+
+.severity-chip--high {
+  color: var(--sev-high);
+  font-weight: 700;
+  border: 2px solid currentColor;
+}
+
+.severity-chip--medium {
+  color: var(--sev-med);
+  font-weight: 600;
+  border: 2px dashed currentColor;
+}
+
+.severity-chip--low {
+  color: var(--sev-low);
+  font-weight: 500;
+  border: 1px dotted currentColor;
+}
+
+.severity-chip--info {
+  color: var(--sev-info);
+  font-weight: 400;
+  border: 1px solid currentColor;
+}
+
+/* Finding ID — a structural device, always mono */
+.finding-id {
+  display: inline-block;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  background: var(--paper-alt);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 0.1em 0.45em;
+}
+
+/* Hairline divider */
+.rule {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2rem 0;
+}
+
+/* Callout */
+.callout {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--red);
+  background: var(--paper-alt);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* Data table — left-aligned, hairline rows, no zebra striping */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.6em 0.9em;
+  text-align: left;
+  border-bottom: 1px solid var(--rule);
+}
+
+.data-table th {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+/* ─────────────────────────────────────────────────────────
+   Accessibility
+   ───────────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .cursor {
+    animation: none !important;
+    opacity: 0.7;
+  }
 }
 
 @media (max-width: 600px) {
