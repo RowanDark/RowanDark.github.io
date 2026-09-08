@@ -1,0 +1,21 @@
+{
+  "name": "Rosec Cyber LLC",
+  "short_name": "Rosec Cyber",
+  "description": "Penetration testing and security assessment for small and mid-sized businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBFBF9",
+  "theme_color": "#14161A",
+  "icons": [
+    {
+      "src": "/assets/images/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
