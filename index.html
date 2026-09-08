@@ -29,18 +29,23 @@ layout: default
 
     <section class="hero" id="hero">
       <div class="hero-inner">
-        <p class="hero-eyebrow label">Rosec Cyber LLC &middot; Covington, Georgia</p>
-        <h1 class="hero-title">We find how an attacker would get into your systems — before they do.</h1>
-        <p class="hero-lede">
-          Rosec Cyber LLC runs offensive security engagements — web application
-          testing, network testing, and external attack surface assessment — for
-          small and mid-sized businesses that need real security work without the
-          overhead of a large firm. Every engagement is scoped in writing, tested
-          by hand, and delivered as a report you can act on.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Request a scoping call</a>
-          <a class="btn btn-secondary" href="{{ '/work/' | relative_url }}">Read a sample report</a>
+        <div class="hero-copy">
+          <p class="hero-eyebrow label">Rosec Cyber LLC &middot; Covington, Georgia</p>
+          <h1 class="hero-title">We find how an attacker would get into your systems — before they do.</h1>
+          <p class="hero-lede">
+            Rosec Cyber LLC runs offensive security engagements — web application
+            testing, network testing, and external attack surface assessment — for
+            small and mid-sized businesses that need real security work without the
+            overhead of a large firm. Every engagement is scoped in writing, tested
+            by hand, and delivered as a report you can act on.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Request a scoping call</a>
+            <a class="btn btn-secondary" href="{{ '/work/' | relative_url }}">Read a sample report</a>
+          </div>
+        </div>
+        <div class="hero-graphic-wrap">
+          {% include hero-graphic.html %}
         </div>
       </div>
     </section>
