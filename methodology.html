@@ -7,48 +7,174 @@ permalink: /methodology/
     <section class="section" id="methodology">
       <div class="section-header">
         <h1 class="section-title">Methodology</h1>
-        <span class="section-desc">how an engagement runs, start to finish</span>
+        <span class="section-desc">eight phases, start to finish</span>
       </div>
 
       <p>
-        Every engagement follows the same structure, regardless of scope.
-        Nothing runs against a target without a signed rules of engagement.
+        Every engagement runs the same eight phases in order, regardless of
+        scope. This is the public summary of that process — the full
+        methodology document, with per-phase checklists and procedures, is
+        delivered as an engagement artifact, not published here.
       </p>
+
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-marker">01</span>
+          <div>
+            <h3>Pre-engagement and authorization</h3>
+            <p>
+              Establish scope, testing windows, exclusions, escalation
+              contacts, and an emergency stop procedure — all in writing.
+              Nothing is tested until a signed statement of work, rules of
+              engagement, and authorization letter are in place.
+            </p>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-marker">02</span>
+          <div>
+            <h3>Passive reconnaissance</h3>
+            <p>
+              Build a picture of the target's public footprint without
+              touching it directly. DNS history, certificate transparency
+              logs, public code, and personnel exposure are reviewed to
+              understand what's discoverable before a single packet is sent.
+            </p>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-marker">03</span>
+          <div>
+            <h3>Active reconnaissance</h3>
+            <p>
+              Confirm what's actually live and reachable within the
+              authorized scope. This is the first direct contact with
+              in-scope systems, kept within agreed testing windows and rate
+              limits to avoid unnecessary load or disruption.
+            </p>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-marker">04</span>
+          <div>
+            <h3>Enumeration</h3>
+            <p>
+              Turn what's reachable into a detailed inventory — exposed
+              services, endpoints, accounts, and application surface.
+              This is the map that vulnerability analysis works from, so it's
+              built systematically rather than sampled.
+            </p>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-marker">05</span>
+          <div>
+            <h3>Vulnerability analysis</h3>
+            <p>
+              Identify candidate weaknesses across the mapped surface, both
+              known issue classes and logic or configuration flaws found by
+              manual inspection. Every candidate is triaged for plausibility
+              before it's carried into testing.
+            </p>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-marker">06</span>
+          <div>
+            <h3>Exploitation</h3>
+            <p>
+              Confirm that a candidate weakness is real by demonstrating it,
+              not by assuming it. Testing is non-destructive by default and
+              stops once impact is proven — there's no reason to push past
+              the point that establishes the finding.
+            </p>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-marker">07</span>
+          <div>
+            <h3>Post-exploitation</h3>
+            <p>
+              Establish what a confirmed foothold actually means — what
+              data, systems, or privileges it exposes, and how far it could
+              reach. This is assessed and documented, not driven to
+              disruption.
+            </p>
+          </div>
+        </li>
+        <li class="step-item">
+          <span class="step-marker">08</span>
+          <div>
+            <h3>Reporting</h3>
+            <p>
+              Deliver findings a technical team can reproduce and a
+              non-technical stakeholder can act on — reproduction steps,
+              evidence, a severity score, and remediation guidance for each,
+              plus an executive summary of overall risk.
+            </p>
+          </div>
+        </li>
+      </ol>
 
       <div class="rule"></div>
 
-      <h2>1. Scoping &amp; rules of engagement</h2>
+      <div class="section-header">
+        <h2 class="section-title">Standards alignment</h2>
+        <span class="section-desc">what each contributes</span>
+      </div>
+
+      <dl class="standards-list">
+        <div>
+          <dt>PTES</dt>
+          <dd>Penetration Testing Execution Standard — the phase structure above is built on it, from pre-engagement through reporting.</dd>
+        </div>
+        <div>
+          <dt>OWASP WSTG v4.2</dt>
+          <dd>Web Security Testing Guide — the coverage checklist for web application engagements, so nothing gets skipped by accident.</dd>
+        </div>
+        <div>
+          <dt>NIST SP 800-115</dt>
+          <dd>Technical Guide to Information Security Testing and Assessment — grounds the network and infrastructure testing approach.</dd>
+        </div>
+        <div>
+          <dt>CVSS v3.1</dt>
+          <dd>Common Vulnerability Scoring System — the scale every finding is scored against, so severity means the same thing report to report.</dd>
+        </div>
+      </dl>
+
+      <div class="rule"></div>
+
+      <h2>Scoring discipline</h2>
       <p>
-        Targets, testing windows, and any exclusions are agreed in writing
-        before any testing begins. This is also where escalation contacts
-        and emergency stop procedures are set.
+        Findings are scored on demonstrated, verified impact against your
+        environment — not on a scanner's default rating and not on how
+        serious an issue could theoretically be in someone else's. Rosec
+        does not inflate severity to make a report look more valuable; a
+        low finding is reported as a low finding.
       </p>
 
-      <h2>2. Reconnaissance</h2>
-      <p>
-        Passive and active enumeration of the in-scope attack surface —
-        exposed hosts, services, subdomains, and technologies — to build an
-        accurate map of what's actually reachable.
-      </p>
+      <h2>Safety</h2>
+      <div class="callout">
+        <p>
+          Testing is non-destructive by default. Anything destructive — a
+          test that could crash a service, corrupt data, or cause an
+          outage — requires explicit written authorization before it's
+          attempted, separate from the general scope agreement.
+        </p>
+        <p>
+          If real personal data is exposed at any point during testing,
+          testing halts immediately and you're notified right away — that
+          notification isn't held for the final report.
+        </p>
+      </div>
 
-      <h2>3. Testing &amp; exploitation</h2>
+      <h2>Finding identifiers</h2>
       <p>
-        Manual testing, supported by tooling, against the mapped surface.
-        Findings are validated before being reported — no unverified
-        scanner output makes it into a report.
-      </p>
-
-      <h2>4. Reporting</h2>
-      <p>
-        Findings are ranked by severity with clear reproduction steps and
-        remediation guidance, written for both technical staff and
-        non-technical stakeholders.
-      </p>
-
-      <h2>5. Remediation support</h2>
-      <p>
-        A follow-up retest is available once fixes are in place, to confirm
-        findings are actually closed.
+        Every finding is assigned an identifier in the form
+        <span class="finding-id">ROSEC-2026-014</span> at initial report and
+        keeps that identifier through remediation and retest. It's how a
+        finding stays traceable from the day it's reported to the day it's
+        confirmed closed.
       </p>
 
       <p>
