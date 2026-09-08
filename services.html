@@ -7,68 +7,121 @@ permalink: /services/
     <section class="section" id="services">
       <div class="section-header">
         <h1 class="section-title">Services</h1>
-        <span class="section-desc">penetration testing and security assessment for small and mid-sized businesses</span>
+        <span class="section-desc">penetration testing and security assessment, scoped to fit</span>
       </div>
 
       <p>
-        Rosec Cyber LLC performs hands-on offensive security engagements sized
-        for organizations that don't have an in-house security team. Every
-        engagement is scoped up front, run against a written rules of
-        engagement, and delivered with a report a non-security stakeholder
-        can act on.
+        Every engagement follows the Rosec methodology: scoped and authorized
+        in writing, tested by hand, and delivered with a report a
+        non-technical stakeholder can act on. Baseline scope is web
+        application and network testing; wireless, physical, social
+        engineering, and cloud configuration review are available as
+        add-on modules. See
+        <a href="{{ '/methodology/' | relative_url }}">Methodology</a> for
+        how an engagement runs end to end.
       </p>
 
-      <div class="tools-grid">
-        <article class="tool-card">
-          <div class="tool-header">
-            <span class="tool-name">External network testing</span>
-          </div>
-          <p class="tool-desc">
-            Assessment of internet-facing infrastructure — exposed services,
-            misconfigurations, and known vulnerabilities reachable from
-            outside your network.
-          </p>
-        </article>
+      <div class="rule"></div>
 
-        <article class="tool-card">
-          <div class="tool-header">
-            <span class="tool-name">Web application testing</span>
-          </div>
-          <p class="tool-desc">
-            Manual and tool-assisted testing of custom and third-party web
-            applications for the flaws automated scanners miss — auth,
-            business logic, and session handling included.
-          </p>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-header">
-            <span class="tool-name">Internal network testing</span>
-          </div>
-          <p class="tool-desc">
-            Simulated internal foothold assessment covering lateral movement,
-            privilege escalation paths, and segmentation gaps.
-          </p>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-header">
-            <span class="tool-name">Security assessment &amp; review</span>
-          </div>
-          <p class="tool-desc">
-            Configuration review and risk assessment for cloud environments,
-            endpoints, and network architecture — for teams that need a
-            baseline before their next audit or insurance renewal.
-          </p>
-        </article>
-      </div>
-
+      <h2>Web Application Penetration Testing</h2>
       <p>
-        Every engagement ends with a written report: findings ranked by
-        severity, reproduction steps, and remediation guidance. See
-        <a href="{{ '/methodology/' | relative_url }}">Methodology</a> for how
-        engagements are run, or
-        <a href="{{ '/contact/' | relative_url }}">get in touch</a> to scope
-        one.
+        Manual, tool-assisted testing of a web application against the
+        OWASP Web Security Testing Guide (WSTG) v4.2. Both unauthenticated
+        and authenticated testing are performed, so findings behind a login
+        are covered, not just the public surface. Emphasis is on business
+        logic flaws and access control failures — the class of bug automated
+        scanners consistently miss. You get a findings report scoped to the
+        application's roles and workflows, with reproduction steps for
+        every confirmed issue.
+      </p>
+
+      <h2>Network Penetration Testing</h2>
+      <p>
+        Testing of external and internal network perimeters, aligned to
+        NIST SP 800-115. Coverage includes service enumeration, exposed
+        configuration issues, and patch-level exposure across in-scope
+        hosts. External testing assesses what's reachable from the
+        internet; internal testing assesses what's reachable from inside
+        your network, including lateral movement and segmentation gaps.
+        You get a findings report mapped to the hosts and services tested.
+      </p>
+
+      <h2>External Attack Surface Assessment</h2>
+      <p>
+        Passive discovery of your internet-facing footprint — certificate
+        transparency logs, DNS enumeration, and related open-source
+        sources — to surface shadow IT and forgotten subdomains before
+        someone else finds them. This assessment is non-intrusive: it does
+        not touch discovered assets beyond passive lookups, requires no
+        testing window, and causes no downtime. You get an inventory of
+        discovered assets with an assessment of what's exposed and why it
+        matters.
+      </p>
+
+      <h2>Remediation Retest</h2>
+      <p>
+        Validation that fixes from a prior engagement actually closed the
+        reported findings, rather than just changed their symptoms. Each
+        finding from the original report is retested individually and
+        delivered against a retest tracker showing per-finding pass/fail
+        status, so you have a clear record of what's fixed and what isn't.
+      </p>
+
+      <h2>Optional modules</h2>
+      <p>
+        The following are scoped as add-ons to a baseline network or web
+        application engagement, not sold as standalone headline services:
+      </p>
+      <ul>
+        <li>Wireless network testing</li>
+        <li>Physical security testing</li>
+        <li>Social engineering (phishing and pretexting scenarios)</li>
+        <li>Cloud configuration review</li>
+      </ul>
+
+      <div class="rule"></div>
+
+      <h2>What you receive</h2>
+      <p>Every engagement is delivered with the same set of artifacts:</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Deliverable</th>
+            <th>What it contains</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Findings report</td>
+            <td>Every finding with a CVSS v3.1 score and step-by-step reproduction instructions</td>
+          </tr>
+          <tr>
+            <td>Executive summary</td>
+            <td>Risk overview written for non-technical stakeholders</td>
+          </tr>
+          <tr>
+            <td>Remediation plan</td>
+            <td>Findings prioritized by risk with concrete remediation guidance</td>
+          </tr>
+          <tr>
+            <td>Testing checklist</td>
+            <td>The completed checklist showing exactly what was tested</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>How scoping works</h2>
+      <p>
+        Engagements are scoped starting from a full black-box baseline and
+        scaled down to fit your environment, constraints, and budget.
+        Nothing runs against a target until scope, testing windows, and
+        rules of engagement are authorized in writing.
+      </p>
+
+      <h2>Pricing</h2>
+      <p>
+        Scope drives price, so rates aren't published here —
+        <a href="{{ '/contact/' | relative_url }}">get in touch</a> with
+        what you'd like assessed and you'll get a scoped quote back.
       </p>
     </section>
