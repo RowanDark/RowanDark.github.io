@@ -19,11 +19,11 @@ RowanDark.github.io/
 │   ├── head.html
 │   ├── header.html        # brand lockup + nav
 │   ├── footer.html
-│   └── lightbox.html      # gallery lightbox markup + script (Work page only)
+│   └── lightbox.html      # gallery lightbox markup + script (unused, kept for reuse)
 ├── index.html              # home page
 ├── services.html           # /services/
 ├── methodology.html        # /methodology/
-├── work.html                # /work/  — screenshots/output samples
+├── work.html                # /work/  — sample report, case studies, public research
 ├── tools.html               # /tools/ — open-source tool cards + snippets
 ├── about.html               # /about/
 ├── contact.html             # /contact/
@@ -52,8 +52,11 @@ underline automatically via a `page.url` comparison — no JS involved.
 **Snippets** — add raw files to `assets/snippets/`, then add a
 `<div class="snippet-card">` block in the Snippets section of `tools.html`.
 
-**Work / gallery** — add `<figure class="gallery-item">` entries to
-`work.html`, pointing at images in `assets/images/`.
+**Work** — `work.html` holds the sample report (findings table +
+`assets/reports/rosec-sample-report.pdf`), anonymized case studies, and
+public research links. No client names, hostnames, IPs, or
+engagement-identifying dates go on this page without the client's written
+permission — see the standing note at the bottom of the page.
 
 **Tool cards** — copy an existing `<article class="tool-card">` block in
 `tools.html` and update the name, description, tags, and link.
