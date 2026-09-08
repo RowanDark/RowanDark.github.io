@@ -2,31 +2,34 @@
   <header class="site-header">
     <div class="wrap">
       <div class="header-inner">
-        <div class="logo-wrap">
-          <img
-            src="assets/images/logo_final.jpg"
-            alt="Rosec Cyber logo"
-            onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';"
-          />
-          <div class="logo-fallback" id="logo-fallback">RC</div>
-        </div>
-        <div class="brand-block">
-          <div class="brand-name">Rosec<span class="hi">Cyber</span> LLC</div>
-          <div class="brand-sub">Security tooling &amp; research — Covington, GA</div>
-          <div class="brand-handle">operator: <span class="hi">r0sec</span> / <span class="hi">RowanDark</span></div>
-        </div>
+        <a class="brand-lockup" href="{{ '/' | relative_url }}">
+          {% assign logo_mark = nil %}
+          {% for f in site.static_files %}
+            {% if f.path == "/assets/images/logo_mark.png" %}{% assign logo_mark = f %}{% endif %}
+          {% endfor %}
+          {% if logo_mark %}
+          <img class="logo-mark" src="{{ '/assets/images/logo_mark.png' | relative_url }}" alt="" width="40" height="40" />
+          {% endif %}
+          <span class="brand-text">
+            <span class="brand-name">Rosec Cyber <span class="brand-suffix">LLC</span></span>
+            <span class="brand-tagline">Penetration testing and security assessment for small and mid-sized businesses.</span>
+            <span class="brand-location">Covington, Georgia</span>
+          </span>
+        </a>
       </div>
     </div>
   </header>
 
   <!-- Nav -->
-  <nav class="site-nav" aria-label="Site sections">
+  <nav class="site-nav" aria-label="Primary">
     <div class="wrap">
       <ul>
-        <li><a href="#tools">tools</a></li>
-        <li><a href="#snippets">snippets</a></li>
-        <li><a href="#gallery">gallery</a></li>
-        <li><a href="https://github.com/RowanDark" target="_blank" rel="noopener">github</a></li>
+        <li><a href="{{ '/services/' | relative_url }}"{% if page.url == '/services/' %} aria-current="page"{% endif %}>Services</a></li>
+        <li><a href="{{ '/methodology/' | relative_url }}"{% if page.url == '/methodology/' %} aria-current="page"{% endif %}>Methodology</a></li>
+        <li><a href="{{ '/work/' | relative_url }}"{% if page.url == '/work/' %} aria-current="page"{% endif %}>Work</a></li>
+        <li><a href="{{ '/tools/' | relative_url }}"{% if page.url == '/tools/' %} aria-current="page"{% endif %}>Tools</a></li>
+        <li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>Contact</a></li>
       </ul>
     </div>
   </nav>

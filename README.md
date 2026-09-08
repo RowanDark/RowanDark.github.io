@@ -1,6 +1,8 @@
 # RowanDark.github.io
 
-Portfolio and reference hub for [Rosec Cyber LLC](https://github.com/RowanDark) security tooling, code snippets, and project assets.
+Site for [Rosec Cyber LLC](https://github.com/RowanDark) — penetration
+testing and security assessment for small and mid-sized businesses, based in
+Covington, Georgia.
 
 **Live site:** https://rowandark.github.io
 
@@ -15,13 +17,20 @@ RowanDark.github.io/
 │   └── default.html       # page shell, renders {{ content }}
 ├── _includes/
 │   ├── head.html
-│   ├── header.html        # header + nav
+│   ├── header.html        # brand lockup + nav
 │   ├── footer.html
-│   └── lightbox.html      # gallery lightbox markup + script
-├── index.html              # main portfolio page (layout: default)
+│   └── lightbox.html      # gallery lightbox markup + script (Work page only)
+├── index.html              # home page
+├── services.html           # /services/
+├── methodology.html        # /methodology/
+├── work.html                # /work/  — screenshots/output samples
+├── tools.html               # /tools/ — open-source tool cards + snippets
+├── about.html               # /about/
+├── contact.html             # /contact/
 ├── assets/
 │   ├── images/
-│   │   └── logo_final.jpg
+│   │   ├── logo_final.jpg      # not rendered directly (portrait, letterboxes at small sizes)
+│   │   └── logo_mark.png       # optional — square/transparent mark, 40px in the header
 │   ├── css/
 │   │   └── rosec.css
 │   └── snippets/           # drop .sh / .txt snippets here
@@ -30,17 +39,29 @@ RowanDark.github.io/
 
 ## Adding content
 
-**Logo** — replace `assets/images/logo_final.jpg` with your preferred logo file and update the `<img src>` in `_includes/header.html`. A styled text fallback renders automatically if the image fails to load.
+**Logo mark** — the header renders a text lockup ("Rosec Cyber LLC") by
+default. To show a mark alongside it, add a square or transparent-background
+image at `assets/images/logo_mark.png`; it renders at 40px. If the file is
+absent, the header ships the text lockup alone — no letterboxed image.
 
-**Snippets** — add raw files to `assets/snippets/`, then add a `<div class="snippet-card">` block in the Snippets section of `index.html`.
+**Nav** — the six nav links (Services · Methodology · Work · Tools · About ·
+Contact) live in `_includes/header.html`, each pointing at a page with a
+matching `permalink`. The current page gets `aria-current="page"` and a red
+underline automatically via a `page.url` comparison — no JS involved.
 
-**Gallery** — replace the `gallery-item` stub divs in `index.html` with `<img>` tags pointing to `assets/images/screenshots/`.
+**Snippets** — add raw files to `assets/snippets/`, then add a
+`<div class="snippet-card">` block in the Snippets section of `tools.html`.
 
-**Tool cards** — copy an existing `<article class="tool-card">` block and update the name, description, tags, and link.
+**Work / gallery** — add `<figure class="gallery-item">` entries to
+`work.html`, pointing at images in `assets/images/`.
+
+**Tool cards** — copy an existing `<article class="tool-card">` block in
+`tools.html` and update the name, description, tags, and link.
 
 ## Deployment
 
-GitHub Pages builds the `main` branch with Jekyll automatically. Push to `main` — no custom build step required.
+GitHub Pages builds the `main` branch with Jekyll automatically. Push to
+`main` — no custom build step required.
 
 ## License
 

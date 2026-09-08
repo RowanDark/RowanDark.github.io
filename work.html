@@ -1,0 +1,32 @@
+---
+layout: default
+title: "Work | Rosec Cyber"
+permalink: /work/
+---
+
+    <!-- Work -->
+<section class="section" id="work">
+  <div class="section-header">
+    <h2 class="section-title">Work</h2>
+    <span class="section-desc">tool output screenshots and reference captures</span>
+  </div>
+
+  <div class="prompt">ls assets/images/screenshots/</div>
+
+  <div class="gallery-grid">
+    <figure class="gallery-item" onclick="openLightbox('assets/images/rezz_ss.png', 'rezz scan output')">
+      <img src="assets/images/rezz_ss.png" alt="rezz scan output" />
+      <figcaption>rezz scan output</figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox('assets/images/v0x_ss.png', 'v0x recon run')">
+      <img src="assets/images/v0x_ss.png" alt="v0x recon run" />
+      <figcaption>v0x recon run</figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox('assets/images/scion_ss_final.png', 'scion example output')">
+      <img src="assets/images/scion_ss_final.png" alt="scion example output" />
+      <figcaption>scion example output</figcaption>
+    </figure>
+  </div>
+</section>
+
+{% include lightbox.html %}
