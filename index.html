@@ -2,6 +2,31 @@
 layout: default
 ---
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Rosec Cyber LLC",
+      "description": {{ site.description | jsonify }},
+      "url": {{ site.url | jsonify }},
+      "image": {{ '/assets/images/og-card.png' | absolute_url | jsonify }},
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Covington",
+        "addressRegion": "GA",
+        "addressCountry": "US"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Rowan Dark"
+      },
+      "sameAs": [
+        "https://github.com/RowanDark",
+        "https://graybox.substack.com"
+      ]
+    }
+    </script>
+
     <section class="hero" id="hero">
       <div class="hero-inner">
         <p class="hero-eyebrow label">Rosec Cyber LLC &middot; Covington, Georgia</p>

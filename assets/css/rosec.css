@@ -5,6 +5,11 @@
    ───────────────────────────────────────────────────────── */
 
 :root {
+  /* Report vernacular is a deliberate single light theme — declared
+     explicitly so browser chrome (scrollbars, form controls) doesn't
+     get inverted by a user's OS-level dark preference. */
+  color-scheme: light;
+
   /* surfaces */
   --paper:      #FBFBF9;
   --paper-alt:  #EFEFEC;
@@ -20,9 +25,9 @@
   /* severity — used as an information device, not accent decoration */
   --sev-crit:   #8A0B1F;
   --sev-high:   #C8102E;
-  --sev-med:    #B36B00;
+  --sev-med:    #955600;
   --sev-low:    #4A6FA5;
-  --sev-info:   #6B7280;
+  --sev-info:   #57606E;
 
   /* type */
   --font-display: "Archivo", system-ui, sans-serif;
@@ -90,7 +95,11 @@ code, pre, kbd, samp, .finding-id {
   font-family: var(--font-mono);
 }
 
-a { color: var(--accent2); text-decoration: none; }
+/* Inline links carry an underline by default so they aren't
+   distinguished from surrounding text by color alone. Nav, buttons,
+   and card-style links opt back out below — they're already set apart
+   by position, border, or background. */
+a { color: var(--accent2); text-decoration: underline; text-underline-offset: 0.15em; }
 a:hover { color: var(--accent); text-decoration: underline; }
 
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
@@ -191,6 +200,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
   font-family: var(--font-display);
   font-size: 0.78rem;
   letter-spacing: 0;
+  text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: color 0.15s, border-color 0.15s;
 }
@@ -348,6 +358,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
   align-items: center;
   gap: 0.3rem;
   margin-top: 0.25rem;
+  text-decoration: none;
   transition: color 0.15s;
 }
 
@@ -434,15 +445,25 @@ a:hover { color: var(--accent); text-decoration: underline; }
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   transition: border-color 0.2s;
 }
 
-.gallery-item:hover {
+.gallery-item:has(.gallery-trigger:hover),
+.gallery-item:has(.gallery-trigger:focus-visible) {
   border-color: var(--border-hi);
 }
 
-.gallery-item img {
+.gallery-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.gallery-trigger img {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
@@ -450,7 +471,8 @@ a:hover { color: var(--accent); text-decoration: underline; }
   transition: opacity 0.2s;
 }
 
-.gallery-item:hover img {
+.gallery-trigger:hover img,
+.gallery-trigger:focus-visible img {
   opacity: 0.8;
 }
 
@@ -545,7 +567,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
   flex-wrap: wrap;
 }
 
-.footer-links a { color: var(--text-dim); }
+.footer-links a { color: var(--text-dim); text-decoration: none; }
 .footer-links a:hover { color: var(--text-muted); }
 
 .footer-copyright { color: var(--text-dim); margin-top: 0.25rem; }
@@ -608,6 +630,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
   padding: 0.75rem 1.4rem;
   border-radius: var(--radius);
   border: 1px solid transparent;
+  text-decoration: none;
   transition: background-color 0.15s, border-color 0.15s, color 0.15s;
 }
 
@@ -902,6 +925,12 @@ a:hover { color: var(--accent); text-decoration: underline; }
 @media (max-width: 600px) {
   .bio { flex-direction: column; }
   .headshot { width: 100%; height: auto; max-width: 180px; }
+}
+
+/* Wraps any wide table so it scrolls within its own box on narrow
+   viewports instead of forcing the page to scroll horizontally. */
+.table-scroll {
+  overflow-x: auto;
 }
 
 /* Data table — left-aligned, hairline rows, no zebra striping */

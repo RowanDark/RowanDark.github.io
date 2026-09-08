@@ -1,13 +1,14 @@
 ---
 layout: default
 title: "Tools | Rosec Cyber"
+description: "Open-source security tooling built in-house at Rosec Cyber — recon, enumeration, and secret-scanning tools written in Go and Rust, plus reference snippets."
 permalink: /tools/
 ---
 
     <!-- Tools -->
     <section class="section" id="tools">
       <div class="section-header">
-        <h2 class="section-title">Tools</h2>
+        <h1 class="section-title">Tools</h1>
         <span class="section-desc">open-source security tooling under active development</span>
       </div>
 
@@ -367,16 +368,22 @@ permalink: /tools/
       <div class="prompt">ls assets/images/</div>
 
       <div class="gallery-grid">
-        <figure class="gallery-item" onclick="openLightbox('{{ '/assets/images/rezz_ss.png' | relative_url }}', 'rezz scan output')">
-          <img src="{{ '/assets/images/rezz_ss.png' | relative_url }}" alt="rezz scan output" />
+        <figure class="gallery-item">
+          <button type="button" class="gallery-trigger" onclick="openLightbox('{{ '/assets/images/rezz_ss.png' | relative_url }}', 'rezz scan output')" aria-label="View larger: rezz scan output">
+            <img src="{{ '/assets/images/rezz_ss.png' | relative_url }}" alt="rezz scan output" width="537" height="676" loading="lazy" />
+          </button>
           <figcaption>rezz scan output</figcaption>
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('{{ '/assets/images/v0x_ss.png' | relative_url }}', 'v0x recon run')">
-          <img src="{{ '/assets/images/v0x_ss.png' | relative_url }}" alt="v0x recon run" />
+        <figure class="gallery-item">
+          <button type="button" class="gallery-trigger" onclick="openLightbox('{{ '/assets/images/v0x_ss.png' | relative_url }}', 'v0x recon run')" aria-label="View larger: v0x recon run">
+            <img src="{{ '/assets/images/v0x_ss.png' | relative_url }}" alt="v0x recon run" width="744" height="593" loading="lazy" />
+          </button>
           <figcaption>v0x recon run</figcaption>
         </figure>
-        <figure class="gallery-item" onclick="openLightbox('{{ '/assets/images/scion_ss_final.png' | relative_url }}', 'scion example output')">
-          <img src="{{ '/assets/images/scion_ss_final.png' | relative_url }}" alt="scion example output" />
+        <figure class="gallery-item">
+          <button type="button" class="gallery-trigger" onclick="openLightbox('{{ '/assets/images/scion_ss_final.png' | relative_url }}', 'scion example output')" aria-label="View larger: scion example output">
+            <img src="{{ '/assets/images/scion_ss_final.png' | relative_url }}" alt="scion example output" width="1070" height="570" loading="lazy" />
+          </button>
           <figcaption>scion example output</figcaption>
         </figure>
       </div>

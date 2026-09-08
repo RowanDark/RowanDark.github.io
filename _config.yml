@@ -2,3 +2,6 @@ title: "Rosec Cyber LLC"
 description: "Penetration testing and security assessment for small and mid-sized businesses — Covington, GA."
 url: "https://rowandark.github.io"
 baseurl: ""
+
+include:
+  - ".well-known"
