@@ -44,164 +44,221 @@ layout: default
             <a class="btn btn-secondary" href="{{ '/work/' | relative_url }}">Read a sample report</a>
           </div>
         </div>
-        <div class="hero-graphic-wrap">
-          {% include hero-graphic.html %}
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="services-summary">
-      <div class="section-header">
-        <h2 class="section-title">Services</h2>
-        <span class="section-desc">what's offered</span>
-      </div>
-
-      <div class="services-grid">
-        <a class="service-card" href="{{ '/services/' | relative_url }}">
-          <span class="service-name">Web Application Penetration Testing</span>
-          <p class="service-desc">
-            Hands-on testing of your application's authentication, session
-            handling, and business logic — not just an automated scan. Each
-            finding comes with reproduction steps your developers can act on.
+        <div class="hero-graphic-col">
+          <div class="hero-artifact">
+            <div class="terminal-frame">
+              <div class="terminal-frame-chrome">
+                <span class="terminal-frame-dots"><span></span><span></span><span></span></span>
+                <span class="terminal-frame-label">scion — subdomain enumeration</span>
+              </div>
+              <div class="terminal-frame-body">
+                <img src="{{ '/assets/images/scion_ss_final.png' | relative_url }}" alt="Terminal output of scion running passive subdomain enumeration across ten OSINT sources, returning 261 unique results in 30 seconds with one source timed out" width="1070" height="570" loading="lazy" />
+              </div>
+            </div>
+            <div class="hero-graphic-wrap">
+              {% include hero-graphic.html %}
+            </div>
+          </div>
+          <p class="hero-graphic-caption">
+            An external attack surface map — the first thing we build on
+            every engagement. Most of what we find is fine. The two in red
+            are why you're hiring us.
           </p>
-          <span class="service-link">Learn more</span>
-        </a>
+        </div>
+      </div>
+    </section>
 
-        <a class="service-card" href="{{ '/services/' | relative_url }}">
-          <span class="service-name">Network Penetration Testing</span>
-          <p class="service-desc">
-            Testing of the hosts and services on your internal or external
-            network for the misconfigurations and weak points that let an
-            attacker move further in. Scoped as unauthenticated or credentialed
-            testing, depending on what you need answered.
+    <div class="band band--ink-900">
+      <div class="band-inner">
+        <section class="stat-row" aria-label="Rosec Cyber at a glance">
+          <div class="stat-figure">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">years in IT operations before offensive security</div>
+          </div>
+          <div class="stat-figure">
+            <div class="stat-number">5</div>
+            <div class="stat-label">active certifications</div>
+          </div>
+          <div class="stat-figure">
+            <div class="stat-number">8</div>
+            <div class="stat-label">phases in every engagement</div>
+          </div>
+          <div class="stat-figure">
+            <div class="stat-number">6</div>
+            <div class="stat-label">open-source tools published</div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="band band--ink-800">
+      <div class="band-inner">
+        <section class="section" id="services-summary">
+          <div class="section-header">
+            <h2 class="section-title">Services</h2>
+            <span class="section-desc">what's offered</span>
+          </div>
+
+          <div class="services-grid">
+            <a class="service-card" href="{{ '/services/' | relative_url }}">
+              <span class="service-name">Web Application Penetration Testing</span>
+              <p class="service-desc">
+                Hands-on testing of your application's authentication, session
+                handling, and business logic — not just an automated scan. Each
+                finding comes with reproduction steps your developers can act on.
+              </p>
+              <span class="service-link">Learn more</span>
+            </a>
+
+            <a class="service-card" href="{{ '/services/' | relative_url }}">
+              <span class="service-name">Network Penetration Testing</span>
+              <p class="service-desc">
+                Testing of the hosts and services on your internal or external
+                network for the misconfigurations and weak points that let an
+                attacker move further in. Scoped as unauthenticated or credentialed
+                testing, depending on what you need answered.
+              </p>
+              <span class="service-link">Learn more</span>
+            </a>
+
+            <a class="service-card" href="{{ '/services/' | relative_url }}">
+              <span class="service-name">External Attack Surface Assessment</span>
+              <p class="service-desc">
+                A map of what your organization actually exposes to the
+                internet — domains, services, and forgotten infrastructure — built
+                before an attacker builds the same map. Useful as a standalone
+                check between full engagements.
+              </p>
+              <span class="service-link">Learn more</span>
+            </a>
+
+            <a class="service-card" href="{{ '/services/' | relative_url }}">
+              <span class="service-name">Remediation Retest</span>
+              <p class="service-desc">
+                Once fixes are in place, a focused retest confirms each finding
+                from the original report is actually closed, not just patched on
+                paper. Scoped to the prior findings, not a full re-test.
+              </p>
+              <span class="service-link">Learn more</span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="band band--ink-900">
+      <div class="band-inner">
+        <section class="section" id="engagement">
+          <div class="section-header">
+            <h2 class="section-title">How an engagement runs</h2>
+            <span class="section-desc">five steps, start to finish</span>
+          </div>
+
+          <p>
+            Every engagement begins with a signed statement of work, a rules of
+            engagement, and an authorization letter. Nothing is tested against
+            your systems until all three are in place.
           </p>
-          <span class="service-link">Learn more</span>
-        </a>
 
-        <a class="service-card" href="{{ '/services/' | relative_url }}">
-          <span class="service-name">External Attack Surface Assessment</span>
-          <p class="service-desc">
-            A map of what your organization actually exposes to the
-            internet — domains, services, and forgotten infrastructure — built
-            before an attacker builds the same map. Useful as a standalone
-            check between full engagements.
+          <ol class="steps steps--row">
+            <li class="step-item">
+              <span class="step-marker">01</span>
+              <div>
+                <h3>Scoping and authorization</h3>
+                <p>Targets, testing windows, and exclusions are agreed in writing, along with escalation contacts and an emergency stop procedure.</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <span class="step-marker">02</span>
+              <div>
+                <h3>Reconnaissance</h3>
+                <p>Passive and active enumeration of the in-scope systems to find out what's actually reachable before any testing begins.</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <span class="step-marker">03</span>
+              <div>
+                <h3>Testing</h3>
+                <p>Manual testing, supported by tooling, against the mapped attack surface. Every finding is validated by hand before it's written up.</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <span class="step-marker">04</span>
+              <div>
+                <h3>Reporting</h3>
+                <p>Findings are ranked by severity with reproduction steps and remediation guidance, written for both technical staff and the people who sign off on fixing them.</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <span class="step-marker">05</span>
+              <div>
+                <h3>Retest</h3>
+                <p>Once fixes are in place, a follow-up test confirms each finding is actually closed.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </div>
+    </div>
+
+    <div class="band band--ink-800">
+      <div class="band-inner">
+        <section class="section" id="standards">
+          <div class="section-header">
+            <h2 class="section-title">Standards alignment</h2>
+            <span class="section-desc">how testing is measured</span>
+          </div>
+
+          <dl class="standards-list standards-list--inline">
+            <div>
+              <dt>PTES</dt>
+              <dd>Penetration Testing Execution Standard — sets the phases every engagement follows, from scoping through reporting.</dd>
+            </div>
+            <div>
+              <dt>OWASP WSTG v4.2</dt>
+              <dd>Web Security Testing Guide — the coverage checklist for web application engagements.</dd>
+            </div>
+            <div>
+              <dt>NIST SP 800-115</dt>
+              <dd>Technical Guide to Information Security Testing and Assessment — methodology for network and infrastructure testing.</dd>
+            </div>
+            <div>
+              <dt>CVSS v3.1</dt>
+              <dd>Common Vulnerability Scoring System — the scale findings are scored against.</dd>
+            </div>
+          </dl>
+
+          <p>
+            Every finding is scored on verified impact against your environment,
+            not a scanner's default severity rating.
           </p>
-          <span class="service-link">Learn more</span>
-        </a>
+        </section>
+      </div>
+    </div>
 
-        <a class="service-card" href="{{ '/services/' | relative_url }}">
-          <span class="service-name">Remediation Retest</span>
-          <p class="service-desc">
-            Once fixes are in place, a focused retest confirms each finding
-            from the original report is actually closed, not just patched on
-            paper. Scoped to the prior findings, not a full re-test.
+    <div class="band band--ink-900">
+      <div class="band-inner">
+        <section class="section" id="credentials">
+          <div class="section-header">
+            <h2 class="section-title">Credentials</h2>
+            <span class="section-desc">certifications and background</span>
+          </div>
+
+          <ul class="credential-list">
+            <li class="credential-item">GIAC GCIH</li>
+            <li class="credential-item">GIAC GSEC</li>
+            <li class="credential-item">GIAC GFACT</li>
+            <li class="credential-item">ISC2 CC</li>
+            <li class="credential-item">SANS Cyber Academy</li>
+          </ul>
+
+          <p>
+            Backed by 15+ years in IT operations and systems management, plus
+            active bug bounty research on HackerOne, Bugcrowd, and Intigriti.
           </p>
-          <span class="service-link">Learn more</span>
-        </a>
+        </section>
       </div>
-    </section>
-
-    <section class="section" id="engagement">
-      <div class="section-header">
-        <h2 class="section-title">How an engagement runs</h2>
-        <span class="section-desc">five steps, start to finish</span>
-      </div>
-
-      <p>
-        Every engagement begins with a signed statement of work, a rules of
-        engagement, and an authorization letter. Nothing is tested against
-        your systems until all three are in place.
-      </p>
-
-      <ol class="steps">
-        <li class="step-item">
-          <span class="step-marker">01</span>
-          <div>
-            <h3>Scoping and authorization</h3>
-            <p>Targets, testing windows, and exclusions are agreed in writing, along with escalation contacts and an emergency stop procedure.</p>
-          </div>
-        </li>
-        <li class="step-item">
-          <span class="step-marker">02</span>
-          <div>
-            <h3>Reconnaissance</h3>
-            <p>Passive and active enumeration of the in-scope systems to find out what's actually reachable before any testing begins.</p>
-          </div>
-        </li>
-        <li class="step-item">
-          <span class="step-marker">03</span>
-          <div>
-            <h3>Testing</h3>
-            <p>Manual testing, supported by tooling, against the mapped attack surface. Every finding is validated by hand before it's written up.</p>
-          </div>
-        </li>
-        <li class="step-item">
-          <span class="step-marker">04</span>
-          <div>
-            <h3>Reporting</h3>
-            <p>Findings are ranked by severity with reproduction steps and remediation guidance, written for both technical staff and the people who sign off on fixing them.</p>
-          </div>
-        </li>
-        <li class="step-item">
-          <span class="step-marker">05</span>
-          <div>
-            <h3>Retest</h3>
-            <p>Once fixes are in place, a follow-up test confirms each finding is actually closed.</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <section class="section" id="standards">
-      <div class="section-header">
-        <h2 class="section-title">Standards alignment</h2>
-        <span class="section-desc">how testing is measured</span>
-      </div>
-
-      <dl class="standards-list">
-        <div>
-          <dt>PTES</dt>
-          <dd>Penetration Testing Execution Standard — sets the phases every engagement follows, from scoping through reporting.</dd>
-        </div>
-        <div>
-          <dt>OWASP WSTG v4.2</dt>
-          <dd>Web Security Testing Guide — the coverage checklist for web application engagements.</dd>
-        </div>
-        <div>
-          <dt>NIST SP 800-115</dt>
-          <dd>Technical Guide to Information Security Testing and Assessment — methodology for network and infrastructure testing.</dd>
-        </div>
-        <div>
-          <dt>CVSS v3.1</dt>
-          <dd>Common Vulnerability Scoring System — the scale findings are scored against.</dd>
-        </div>
-      </dl>
-
-      <p>
-        Every finding is scored on verified impact against your environment,
-        not a scanner's default severity rating.
-      </p>
-    </section>
-
-    <section class="section" id="credentials">
-      <div class="section-header">
-        <h2 class="section-title">Credentials</h2>
-        <span class="section-desc">certifications and background</span>
-      </div>
-
-      <ul class="credential-list">
-        <li class="credential-item">GIAC GCIH</li>
-        <li class="credential-item">GIAC GSEC</li>
-        <li class="credential-item">GIAC GFACT</li>
-        <li class="credential-item">ISC2 CC</li>
-        <li class="credential-item">SANS Cyber Academy</li>
-      </ul>
-
-      <p>
-        Backed by 15+ years in IT operations and systems management, plus
-        active bug bounty research on HackerOne, Bugcrowd, and Intigriti.
-      </p>
-    </section>
+    </div>
 
     <section class="cta-band" id="cta">
       <div class="cta-inner">

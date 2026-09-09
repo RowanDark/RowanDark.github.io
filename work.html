@@ -5,7 +5,9 @@ description: "A complete sample penetration test report, anonymized case studies
 permalink: /work/
 ---
 
-    <section class="section" id="work">
+    <div class="band band--ink-900">
+    <div class="band-inner">
+    <section class="section section--lead" id="work">
       <div class="section-header">
         <h1 class="section-title">Work</h1>
         <span class="section-desc">sample reporting, case studies, and public research</span>
@@ -18,9 +20,14 @@ permalink: /work/
         studies described at the class level with every identifying detail
         removed, and links to security research that's already public.
       </p>
+    </section>
+    </div>
+    </div>
 
-      <div class="rule"></div>
-
+    <div class="band band--ink-800">
+    <div class="band-inner doc-grid">
+    <div class="doc-main">
+    <section class="section" id="sample-report">
       <div class="section-header">
         <h2 class="section-title">Sample report</h2>
         <span class="section-desc">full deliverable, zero client risk</span>
@@ -38,14 +45,6 @@ permalink: /work/
         <a href="{{ '/methodology/' | relative_url }}">Methodology</a> for
         that structure in full.
       </p>
-
-      <ul class="severity-legend">
-        <li><span class="legend-swatch legend-swatch--info"></span>Info</li>
-        <li><span class="legend-swatch legend-swatch--low"></span>Low</li>
-        <li><span class="legend-swatch legend-swatch--medium"></span>Medium</li>
-        <li><span class="legend-swatch legend-swatch--high"></span>High</li>
-        <li><span class="legend-swatch legend-swatch--critical"></span>Critical</li>
-      </ul>
 
       <div class="severity-bar" role="img" aria-label="Severity distribution of the sample report's 6 findings: 1 low, 2 medium, 2 high, 1 critical">
         <span class="severity-bar-seg severity-bar-seg--low" style="width:16.67%">1</span>
@@ -106,6 +105,11 @@ permalink: /work/
       </table>
       </div>
 
+      <div class="stub-notice">
+        Report page preview
+        <span>Pages 1, 2, and a findings page render here as an overlapping fan once the PDF is published.</span>
+      </div>
+
       <p>
         <span class="btn btn-disabled" role="link" aria-disabled="true">Download full report (PDF) — coming soon</span>
       </p>
@@ -114,9 +118,32 @@ permalink: /work/
         finished report's finding set and severity distribution; the
         download link will activate once it's published, not before.
       </p>
+    </section>
+    </div>
+    <aside class="doc-aside">
+      <div class="margin-card">
+        <h3 class="margin-card-title">Severity scale</h3>
+        <ul class="severity-legend">
+          <li><span class="legend-swatch legend-swatch--info"></span>Info</li>
+          <li><span class="legend-swatch legend-swatch--low"></span>Low</li>
+          <li><span class="legend-swatch legend-swatch--medium"></span>Medium</li>
+          <li><span class="legend-swatch legend-swatch--high"></span>High</li>
+          <li><span class="legend-swatch legend-swatch--critical"></span>Critical</li>
+        </ul>
+      </div>
+      <div class="margin-card" style="margin-top: 1.25rem;">
+        <h3 class="margin-card-title">Download the sample report</h3>
+        <p>Full PDF, built end-to-end against a self-hosted Juice Shop instance.</p>
+        <span class="btn btn-disabled" role="link" aria-disabled="true">Coming soon</span>
+      </div>
+    </aside>
+    </div>
+    </div>
 
-      <div class="rule"></div>
-
+    <div class="band band--ink-900">
+    <div class="band-inner doc-grid">
+    <div class="doc-main">
+    <section class="section" id="case-studies">
       <div class="section-header">
         <h2 class="section-title">Case studies</h2>
         <span class="section-desc">anonymized, class-level, outcome-focused</span>
@@ -129,6 +156,14 @@ permalink: /work/
         the problem: the engagement type, the environment in general terms,
         the classes of vulnerability found, what the client changed, and
         the verified outcome.
+      </p>
+      <p>
+        "Anonymized" means something specific here: the severity ratings
+        and vulnerability categories shown are the real ones from the real
+        engagement, not adjusted or invented for effect. What's stripped is
+        anything that could identify the client or the target — names,
+        hosts, and dates. Client work is described here at all only with
+        the client's written permission.
       </p>
 
       <div class="case-study">
@@ -195,13 +230,77 @@ permalink: /work/
       </div>
       </div>
 
+      <div class="case-study">
+      <h3>External attack surface assessment — mid-market services firm</h3>
+      <div class="severity-bar severity-bar--strip" role="img" aria-label="Severity distribution of this engagement's 7 findings: 2 info, 2 low, 2 medium, 1 high">
+        <span class="severity-bar-seg severity-bar-seg--info" style="width:28.57%"></span>
+        <span class="severity-bar-seg severity-bar-seg--low" style="width:28.57%"></span>
+        <span class="severity-bar-seg severity-bar-seg--medium" style="width:28.57%"></span>
+        <span class="severity-bar-seg severity-bar-seg--high" style="width:14.29%"></span>
+      </div>
+      <p class="severity-bar-caption">7 findings — 0 critical, 1 high, 2 medium, 2 low, 2 info</p>
+      <p>
+        A mid-market services firm engaged Rosec for a standalone external
+        attack surface assessment ahead of a funding round's technical due
+        diligence — no active testing, just a passive map of what the
+        organization actually exposed to the internet. Enumeration
+        surfaced a handful of forgotten subdomains from a discontinued
+        product line, still resolving and still reachable years after the
+        product was retired. Two of those pointed at non-production
+        staging environments that were never meant to be internet-facing
+        at all, one of which — a
+        <span class="severity-chip severity-chip--high">High</span>
+        finding — was running a web server version with known,
+        unpatched vulnerabilities well past its end-of-life date. Several
+        other hosts returned service banners disclosing exact patch
+        levels, letting an attacker fingerprint exploitable versions
+        without sending a single crafted request — a
+        <span class="severity-chip severity-chip--medium">Medium</span>
+        finding repeated across two hosts. The remainder were
+        <span class="severity-chip severity-chip--low">Low</span>
+        and
+        <span class="severity-chip severity-chip--info">Info</span>
+        items: expired-but-still-listed DNS records and a handful of
+        subdomains with more verbose configuration than necessary.
+      </p>
+      <p>
+        None of this surfaced through the client's own inventory — the
+        forgotten subdomains and staging environments weren't in any
+        asset list, because nobody still working there had provisioned
+        them. That was the actual finding: the organization's real
+        internet-facing footprint was larger than the one it thought it
+        had. The staging environments were pulled offline, the retired
+        subdomains were removed from DNS, and the patch-level disclosures
+        were suppressed at the web server configuration level — all
+        confirmed in a brief follow-up pass at no additional charge, since
+        the fixes were infrastructure changes rather than application
+        code.
+      </p>
+      </div>
+
       <p class="tools-disclaimer">
         More case studies are added here as engagements are completed,
         sanitized, and cleared for publication.
       </p>
+    </section>
+    </div>
+    <aside class="doc-aside">
+      <div class="margin-card">
+        <h3 class="margin-card-title">Sanitization policy</h3>
+        <p>
+          Client work is published only with written permission. No client
+          names, hostnames, IP addresses, or engagement-identifying dates
+          appear anywhere on this site — every example above, sample report
+          included, is sanitized to the class level.
+        </p>
+      </div>
+    </aside>
+    </div>
+    </div>
 
-      <div class="rule"></div>
-
+    <div class="band band--ink-800">
+    <div class="band-inner">
+    <section class="section" id="public-research">
       <div class="section-header">
         <h2 class="section-title">Public research</h2>
         <span class="section-desc">disclosed findings and public writing</span>
@@ -216,13 +315,6 @@ permalink: /work/
         tooling and research methodology in the meantime are published on
         the <a href="https://graybox.substack.com" target="_blank" rel="noopener">Gray Box Substack and podcast</a>.
       </p>
-
-      <div class="rule"></div>
-
-      <p class="tools-disclaimer">
-        Client work is published on this page only with the client's
-        written permission. Every example above — sample report included —
-        is sanitized: no client names, hostnames, IP addresses, or
-        engagement-identifying dates appear anywhere on this site.
-      </p>
     </section>
+    </div>
+    </div>

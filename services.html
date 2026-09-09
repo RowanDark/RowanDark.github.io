@@ -5,7 +5,9 @@ description: "Web application testing, network testing, external attack surface 
 permalink: /services/
 ---
 
-    <section class="section" id="services">
+    <div class="band band--ink-900">
+    <div class="band-inner">
+    <section class="section section--lead" id="services">
       <div class="section-header">
         <h1 class="section-title">Services</h1>
         <span class="section-desc">penetration testing and security assessment, scoped to fit</span>
@@ -21,53 +23,122 @@ permalink: /services/
         <a href="{{ '/methodology/' | relative_url }}">Methodology</a> for
         how an engagement runs end to end.
       </p>
+    </section>
+    </div>
+    </div>
 
-      <div class="rule"></div>
+    <div class="band band--ink-800">
+    <div class="band-inner doc-grid">
+    <div class="doc-main">
+    <section class="section" id="services-detail">
+      <div class="services-detail-grid">
+        <div class="service-detail">
+          <h2>Web Application Penetration Testing</h2>
+          <p>
+            Manual, tool-assisted testing of a web application against the
+            OWASP Web Security Testing Guide (WSTG) v4.2. Both unauthenticated
+            and authenticated testing are performed, so findings behind a login
+            are covered, not just the public surface. Emphasis is on business
+            logic flaws and access control failures — the class of bug automated
+            scanners consistently miss. You get a findings report scoped to the
+            application's roles and workflows, with reproduction steps for
+            every confirmed issue.
+          </p>
+          <p class="service-typical">
+            <strong>Typical engagement:</strong> 5–10 business days,
+            depending on application size. Needed from you: scoped
+            URLs or a staging environment, plus a test account for each
+            user role. Deliverable: findings report and executive summary.
+          </p>
+        </div>
 
-      <h2>Web Application Penetration Testing</h2>
-      <p>
-        Manual, tool-assisted testing of a web application against the
-        OWASP Web Security Testing Guide (WSTG) v4.2. Both unauthenticated
-        and authenticated testing are performed, so findings behind a login
-        are covered, not just the public surface. Emphasis is on business
-        logic flaws and access control failures — the class of bug automated
-        scanners consistently miss. You get a findings report scoped to the
-        application's roles and workflows, with reproduction steps for
-        every confirmed issue.
-      </p>
+        <div class="service-detail">
+          <h2>Network Penetration Testing</h2>
+          <p>
+            Testing of external and internal network perimeters, aligned to
+            NIST SP 800-115. Coverage includes service enumeration, exposed
+            configuration issues, and patch-level exposure across in-scope
+            hosts. External testing assesses what's reachable from the
+            internet; internal testing assesses what's reachable from inside
+            your network, including lateral movement and segmentation gaps.
+            You get a findings report mapped to the hosts and services tested.
+          </p>
+          <p class="service-typical">
+            <strong>Typical engagement:</strong> 5–10 business days for a
+            single network segment. Needed from you: the in-scope IP
+            ranges or host list, and a limited-privilege account for
+            credentialed testing. Deliverable: findings report mapped to
+            hosts and services.
+          </p>
+        </div>
 
-      <h2>Network Penetration Testing</h2>
-      <p>
-        Testing of external and internal network perimeters, aligned to
-        NIST SP 800-115. Coverage includes service enumeration, exposed
-        configuration issues, and patch-level exposure across in-scope
-        hosts. External testing assesses what's reachable from the
-        internet; internal testing assesses what's reachable from inside
-        your network, including lateral movement and segmentation gaps.
-        You get a findings report mapped to the hosts and services tested.
-      </p>
+        <div class="service-detail">
+          <h2>External Attack Surface Assessment</h2>
+          <p>
+            Passive discovery of your internet-facing footprint — certificate
+            transparency logs, DNS enumeration, and related open-source
+            sources — to surface shadow IT and forgotten subdomains before
+            someone else finds them. This assessment is non-intrusive: it does
+            not touch discovered assets beyond passive lookups, requires no
+            testing window, and causes no downtime. You get an inventory of
+            discovered assets with an assessment of what's exposed and why it
+            matters.
+          </p>
+          <p class="service-typical">
+            <strong>Typical engagement:</strong> 2–3 business days,
+            non-intrusive. Needed from you: your primary domain name — this
+            assessment doesn't touch your systems, so nothing else is
+            required. Deliverable: asset inventory with an exposure
+            assessment.
+          </p>
+          <div class="terminal-frame terminal-frame--compact">
+            <div class="terminal-frame-chrome">
+              <span class="terminal-frame-dots"><span></span><span></span><span></span></span>
+              <span class="terminal-frame-label">v0x — wordlist gen</span>
+            </div>
+            <div class="terminal-frame-body">
+              <img src="{{ '/assets/images/v0x_ss.png' | relative_url }}" alt="Terminal output of v0x crawling a practice target at depth 2 and printing the word count discovered on each page" width="744" height="593" loading="lazy" />
+            </div>
+          </div>
+        </div>
 
-      <h2>External Attack Surface Assessment</h2>
-      <p>
-        Passive discovery of your internet-facing footprint — certificate
-        transparency logs, DNS enumeration, and related open-source
-        sources — to surface shadow IT and forgotten subdomains before
-        someone else finds them. This assessment is non-intrusive: it does
-        not touch discovered assets beyond passive lookups, requires no
-        testing window, and causes no downtime. You get an inventory of
-        discovered assets with an assessment of what's exposed and why it
-        matters.
-      </p>
+        <div class="service-detail">
+          <h2>Remediation Retest</h2>
+          <p>
+            Validation that fixes from a prior engagement actually closed the
+            reported findings, rather than just changed their symptoms. Each
+            finding from the original report is retested individually and
+            delivered against a retest tracker showing per-finding pass/fail
+            status, so you have a clear record of what's fixed and what isn't.
+          </p>
+          <p class="service-typical">
+            <strong>Typical engagement:</strong> 1–3 business days, scoped
+            to the findings being retested. Needed from you: confirmation
+            that fixes are deployed to the environment originally tested.
+            Deliverable: a per-finding retest tracker.
+          </p>
+        </div>
+      </div>
+    </section>
+    </div>
+    <aside class="doc-aside">
+      <div class="margin-card margin-card--sticky">
+        <h3 class="margin-card-title">What you receive</h3>
+        <ul class="margin-card-list">
+          <li>Findings report with CVSS v3.1 scoring</li>
+          <li>Executive summary for non-technical stakeholders</li>
+          <li>Remediation plan prioritized by risk</li>
+          <li>Completed testing checklist</li>
+        </ul>
+      </div>
+    </aside>
+    </div>
+    </div>
 
-      <h2>Remediation Retest</h2>
-      <p>
-        Validation that fixes from a prior engagement actually closed the
-        reported findings, rather than just changed their symptoms. Each
-        finding from the original report is retested individually and
-        delivered against a retest tracker showing per-finding pass/fail
-        status, so you have a clear record of what's fixed and what isn't.
-      </p>
-
+    <div class="band band--ink-900">
+    <div class="band-inner doc-grid">
+    <div class="doc-main">
+    <section class="section" id="optional-modules">
       <h2>Optional modules</h2>
       <p>
         The following are scoped as add-ons to a baseline network or web
@@ -79,9 +150,25 @@ permalink: /services/
         <li>Social engineering (phishing and pretexting scenarios)</li>
         <li>Cloud configuration review</li>
       </ul>
+    </section>
+    </div>
+    <aside class="doc-aside">
+      <div class="margin-card">
+        <h3 class="margin-card-title">Not sure what you need?</h3>
+        <p>
+          Most engagements start as a conversation, not a fixed order form.
+          Describe what you're worried about and get a scoped recommendation
+          back.
+        </p>
+        <a class="btn btn-secondary" href="{{ '/contact/' | relative_url }}">Get in touch</a>
+      </div>
+    </aside>
+    </div>
+    </div>
 
-      <div class="rule"></div>
-
+    <div class="band band--ink-800">
+    <div class="band-inner">
+    <section class="section" id="deliverables">
       <h2>What you receive</h2>
       <p>Every engagement is delivered with the same set of artifacts:</p>
       <div class="table-scroll">
@@ -128,3 +215,70 @@ permalink: /services/
         what you'd like assessed and you'll get a scoped quote back.
       </p>
     </section>
+    </div>
+    </div>
+
+    <div class="band band--ink-900">
+    <div class="band-inner">
+    <section class="section" id="what-we-dont-do">
+      <div class="section-header">
+        <h2 class="section-title">What we don't do</h2>
+        <span class="section-desc">naming the limits up front</span>
+      </div>
+      <p>
+        Being clear about what's out of scope saves both of us a wasted
+        call:
+      </p>
+      <ul>
+        <li>No compliance audit sign-off — testing supports a SOC 2, PCI, or HIPAA effort, but Rosec doesn't issue the compliance attestation itself</li>
+        <li>No managed detection and response — engagements are point-in-time assessments, not ongoing monitoring of your environment</li>
+        <li>No incident response retainer — if you're currently dealing with an active breach, that's a different kind of engagement than what's offered here</li>
+      </ul>
+    </section>
+    </div>
+    </div>
+
+    <div class="band band--ink-800">
+    <div class="band-inner">
+    <section class="section" id="faq">
+      <div class="section-header">
+        <h2 class="section-title">FAQ</h2>
+        <span class="section-desc">the questions that come up on scoping calls</span>
+      </div>
+
+      <h2>Will testing take our systems down?</h2>
+      <p>
+        Testing is non-destructive by default. Anything that could crash a
+        service, corrupt data, or cause an outage requires explicit written
+        authorization before it's attempted, separate from the general
+        scope agreement — see <a href="{{ '/methodology/' | relative_url }}">Methodology</a>
+        for the full safety policy.
+      </p>
+
+      <h2>Do you need production access?</h2>
+      <p>
+        It depends on what you want answered. A staging environment that
+        mirrors production is often preferred for testing that could touch
+        data, but production testing is common and safe within the
+        non-destructive default above — this gets settled during scoping,
+        not assumed either way.
+      </p>
+
+      <h2>How long until we get the report?</h2>
+      <p>
+        The delivery date is fixed in the statement of work before testing
+        starts, not left open-ended — so you know the date going in rather
+        than waiting to find out.
+      </p>
+
+      <h2>What happens if you find something critical mid-test?</h2>
+      <p>
+        Critical findings are never held for the final report. You're
+        notified as soon as one is confirmed, with enough detail to start
+        remediating immediately. If continuing to test that specific issue
+        risks damaging data or availability, testing on it pauses until
+        we've talked.
+      </p>
+    </section>
+    </div>
+    </div>

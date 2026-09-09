@@ -1,11 +1,24 @@
-<svg class="hero-graphic-svg" viewBox="0 0 340 310" role="presentation" aria-hidden="true" focusable="false" style="color:var(--ink-soft)">
+<svg class="hero-graphic-svg" viewBox="0 -20 440 330" role="img" aria-labelledby="asgTitle asgDesc" focusable="false">
+  <title id="asgTitle">External attack surface map</title>
+  <desc id="asgDesc">
+    A diagram of one root domain fanning out to five subdomains, which fan
+    out to sixteen live hosts. Most hosts are informational or low severity.
+    Two are marked high severity: an exposed admin panel and outdated TLS.
+  </desc>
+
   <defs>
     <filter id="asgHalo" x="-100%" y="-100%" width="300%" height="300%">
       <feGaussianBlur stdDeviation="2.75" />
     </filter>
   </defs>
 
-  <g class="asg-edges" fill="none" stroke="currentColor" stroke-width="1" opacity=".45">
+  <g class="asg-tier-labels">
+    <text x="0" y="-6" text-anchor="start">root domain</text>
+    <text x="150" y="-6" text-anchor="middle">subdomains</text>
+    <text x="300" y="-6" text-anchor="middle">live hosts</text>
+  </g>
+
+  <g class="asg-edges" fill="none" stroke-width="1" opacity=".45">
     <path class="asg-edge" pathLength="100" style="animation-delay:0ms"   d="M20,150 C85,150 85,40  150,40" />
     <path class="asg-edge" pathLength="100" style="animation-delay:40ms"  d="M20,150 C85,150 85,95  150,95" />
     <path class="asg-edge" pathLength="100" style="animation-delay:80ms"  d="M20,150 C85,150 85,150 150,150" />
@@ -38,6 +51,7 @@
 
   <circle class="asg-halo" cx="300" cy="110" r="12" filter="url(#asgHalo)" style="animation-delay:1080ms" />
   <circle class="asg-node asg-node--high" cx="300" cy="110" r="6.5" style="animation-delay:1080ms" />
+  <text class="asg-node-label" x="311" y="113">exposed admin panel</text>
 
   <circle class="asg-node asg-node--info" cx="300" cy="140" r="4.5" style="animation-delay:1100ms" />
   <circle class="asg-node asg-node--med"  cx="300" cy="170" r="4.5" style="animation-delay:1120ms" />
@@ -46,6 +60,7 @@
 
   <circle class="asg-halo" cx="300" cy="260" r="12" filter="url(#asgHalo)" style="animation-delay:1180ms" />
   <circle class="asg-node asg-node--high" cx="300" cy="260" r="6.5" style="animation-delay:1180ms" />
+  <text class="asg-node-label" x="311" y="263">outdated TLS</text>
 
   <circle class="asg-node asg-node--info" cx="300" cy="290" r="4.5" style="animation-delay:1200ms" />
 </svg>

@@ -15,7 +15,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="{{ '/assets/images/favicon-512.png' | relative_url }}" />
   <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}" />
   <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}" />
-  <meta name="theme-color" content="#14161A" />
+  <meta name="theme-color" content="#0B0C0F" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -35,4 +35,19 @@
 
   <link rel="stylesheet" href="{{ '/assets/css/fonts.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/rosec.css' | relative_url }}">
+
+  <!-- Measures the scrollbar's width so full-bleed bands (.hero,
+       .cta-band, .band) can subtract it from 100vw and never overflow
+       the visible viewport. Runs before first paint; harmless with JS
+       disabled since --sbw already has a 0px fallback in CSS. -->
+  <script>
+    (function () {
+      function setScrollbarWidth() {
+        var sbw = window.innerWidth - document.documentElement.clientWidth;
+        document.documentElement.style.setProperty('--sbw', sbw + 'px');
+      }
+      setScrollbarWidth();
+      window.addEventListener('resize', setScrollbarWidth);
+    })();
+  </script>
 </head>
