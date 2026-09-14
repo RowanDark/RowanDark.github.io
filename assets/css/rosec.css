@@ -1008,7 +1008,7 @@ a:hover { color: var(--red-soft); text-decoration-color: currentColor; }
 }
 
 @media (min-width: 1000px) {
-  .hero-inner { grid-template-columns: 1fr 44%; }
+  .hero-inner { grid-template-columns: 1fr 48%; }
 }
 
 /* Grid items default to min-width:auto, which lets a wide intrinsic
@@ -1025,7 +1025,7 @@ a:hover { color: var(--red-soft); text-decoration-color: currentColor; }
   content: "";
   position: absolute;
   inset: -15%;
-  background: radial-gradient(circle at 62% 45%, rgba(224, 27, 51, 0.1), transparent 70%);
+  background: radial-gradient(circle at 68% 58%, rgba(224, 27, 51, 0.12), transparent 70%);
   z-index: -1;
 }
 
@@ -1050,13 +1050,13 @@ a:hover { color: var(--red-soft); text-decoration-color: currentColor; }
 
 .asg-tier-labels text {
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 11px;
   fill: var(--text-dim);
 }
 
 .asg-node-label {
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 11px;
   fill: var(--text-dim);
 }
 
@@ -1177,19 +1177,16 @@ a:hover { color: var(--red-soft); text-decoration-color: currentColor; }
 
 @media (max-width: 999px) {
   .hero-graphic-wrap {
-    height: 160px;
-    display: flex;
-    justify-content: center;
+    max-width: 520px;
+    margin-inline: auto;
   }
-
-  .hero-graphic-svg { width: auto; height: 100%; }
 }
 
 @media (max-width: 600px) {
-  /* The graphic itself stays hidden below this width, but the caption
-     moves above the breakpoint (see markup) so mobile readers still
-     get the sentence explaining what it depicted. */
-  .hero-graphic-wrap { display: none; }
+  .asg-node-label { display: none; }
+
+  .hero-graphic-wrap { overflow: hidden; }
+  .hero-graphic-svg { width: 130%; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
